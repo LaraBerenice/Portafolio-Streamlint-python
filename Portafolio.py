@@ -1,7 +1,13 @@
 import streamlit as st
+import base64
 
 # Configuración de la página
 st.set_page_config(page_title="Servicios Ambientales", layout="wide")
+
+def imagen_base64(ruta):
+    with open(ruta, "rb") as img_file:
+        b64 = base64.b64encode(img_file.read()).decode()
+    return f"data:image/png;base64,{b64}"
 
 # Modo Día/Noche (debe inicializarse primero)
 if 'mode' not in st.session_state:
@@ -11,10 +17,16 @@ if 'mode' not in st.session_state:
 top_col1, top_col2 = st.columns([6, 1])  # Más espacio a la izquierda
 
 with top_col1:
-    col_logo, col_desc = st.columns([1, 5])
+    col_logo, col_desc = st.columns([1, 3])
     with col_logo:
-        st.image("https://picsum.photos/100/100?random=1", width=100)
+        logo = imagen_base64("Imagenes/Logo2.png")
+        st.image(logo, width=500)
     with col_desc:
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
         st.markdown("""
             ### 📊 Agronegocios | Gestión Ambiental | Análisis de Datos🌱
             Ledesma Lara Berenice -
@@ -32,45 +44,56 @@ with top_col2:
 
 # Cambiar estilos según el modo
 if st.session_state.mode == "Modo Noche":
-    st.markdown("""
+    fondo = imagen_base64("Imagenes/Campo nocturno bajo la luna llena.png")
+    st.markdown(f"""
         <style>
-        .stApp {
+        .stApp {{
             background-color: #121212;
             color: #FFFFFF;
-        }
-        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {
+            background-image: url('{fondo}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #FFFFFF !important;
-        }
-        .stButton>button {
+        }}
+        .stButton>button {{
             background-color: #333333;
             color: #FFFFFF;
             border: 1px solid #FFFFFF;
-        }
-        .stImage {
-            border: 2px solid #FFFFFF;
-        }
+        }}
+        .stImage {{
+            border: none !important;
+        }}
         </style>
     """, unsafe_allow_html=True)
 else:
-    st.markdown("""
+    fondo = imagen_base64("Imagenes/Campo agrícola y paneles solares.png")
+    st.markdown(f"""
         <style>
-        .stApp {
+        .stApp {{
             background-color: #FFFFFF;
             color: #000000;
-        }
-        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {
+            background-image: url('{fondo}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #000000 !important;
-        }
-        .stButton>button {
+        }}
+        .stButton>button {{
             background-color: #4CAF50;
             color: white;
             border: none;
-        }
-        .stImage {
+        }}
+        .stImage {{
             border: 2px solid #00000000;
-        }
+        }}
         </style>
     """, unsafe_allow_html=True)
+
 
 # Barra de navegación centrada
 nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([2, 1, 1, 1, 2])  # Espacios a los lados para centrar
