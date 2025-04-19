@@ -74,7 +74,7 @@ else:
         <style>
         .stApp {{
             background-color: #FFFFFF;
-            color: #000000;
+            color: #006400;
             background-image: url('{fondo}');
             background-size: cover;
             background-position: center;
@@ -154,7 +154,8 @@ elif st.session_state.seccion == "Proyectos":
 
 elif st.session_state.seccion == "Contacto":
     st.markdown("### 📞 Contacto")
-    st.write("¿Tenés alguna consulta o querés discutir un proyecto? ¡Contactanos!")
+    st.write("¿Tienes alguna consulta o te gustaría conocerme más? Puedes contactarme por WhatsApp, email, escribirme y verme en LinkedIn, o ver mis proyectos en GitHub. ¡Estoy a tu disposición!")
+
 
     col1, col2, col3, col4 = st.columns(4)
 
