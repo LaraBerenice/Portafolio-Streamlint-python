@@ -1,43 +1,155 @@
 import streamlit as st
 
-st.set_page_config(page_title="Portafolio Profesional", layout="wide")
+# Configuración de la página
+st.set_page_config(page_title="Servicios Ambientales", layout="wide")
 
-# --- Perfil ---
-st.title("Lic. en Gestión Ambiental | Analista de Datos")
-st.write("""
-Soy especialista en medio ambiente y análisis de datos. 
-Ayudo a empresas del sector agropecuario a cumplir con normativas ambientales 
-y tomar decisiones sostenibles mediante herramientas técnicas y datos.
-""")
+# Modo Día/Noche (debe inicializarse primero)
+if 'mode' not in st.session_state:
+    st.session_state.mode = "Modo Día"
 
-# --- Servicios ---
-st.header("Servicios")
-st.write("""
-- Elaboración de Informes de Impacto Ambiental (EIA)  
-- Planes de Gestión de Residuos  
-- Monitoreo y diagnóstico ambiental  
-- Análisis de datos ambientales y visualización técnica
-""")
+# Línea superior con logo + descripción a la izquierda y sol/luna a la derecha
+top_col1, top_col2 = st.columns([6, 1])  # Más espacio a la izquierda
 
-# --- Proyectos ---
-st.header("Proyectos")
-st.subheader("Proyecto 1: Diagnóstico ambiental en zona rural")
-st.write("Estudio sobre calidad del suelo y gestión de residuos en campos agrícolas.")
-st.markdown("[Ver en GitHub](https://github.com/tu_usuario/proyecto1)")
+with top_col1:
+    col_logo, col_desc = st.columns([1, 5])
+    with col_logo:
+        st.image("https://picsum.photos/100/100?random=1", width=100)
+    with col_desc:
+        st.markdown("""
+            ### 📊 Agronegocios | Gestión Ambiental | Análisis de Datos🌱
+            Ledesma Lara Berenice -
+            Licenciada en Gestión de Agroempresas & Estudiante de Maestría en Gestión Ambiental
+        """)
 
-st.subheader("Proyecto 2: Visualización de datos de impacto ambiental")
-st.write("Dashboard interactivo para analizar indicadores de impacto en agroindustrias.")
-st.markdown("[Ver en GitHub](https://github.com/tu_usuario/proyecto2)")
+with top_col2:
+    col_sol, col_luna = st.columns(2)
+    with col_sol:
+        if st.button("☀️"):
+            st.session_state.mode = "Modo Día"
+    with col_luna:
+        if st.button("🌙"):
+            st.session_state.mode = "Modo Noche"
 
-# --- Contacto ---
-st.header("Contacto")
-st.write("Podés encontrarme en:")
-st.markdown("""
-- [LinkedIn](https://www.linkedin.com/in/tu_usuario)  
-- [GitHub](https://github.com/tu_usuario)  
-- Correo: tuemail@gmail.com
-""")
+# Cambiar estilos según el modo
+if st.session_state.mode == "Modo Noche":
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {
+            color: #FFFFFF !important;
+        }
+        .stButton>button {
+            background-color: #333333;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+        }
+        .stImage {
+            border: 2px solid #FFFFFF;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {
+            color: #000000 !important;
+        }
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .stImage {
+            border: 2px solid #00000000;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
-# --- WhatsApp ---
-whatsapp_url = "https://wa.me/5493704001234?text=Hola%2C+me+interesa+tu+servicio+de+consultor%C3%ADa+ambiental"
-st.markdown(f"**[Contactame directamente por WhatsApp]({whatsapp_url})**", unsafe_allow_html=True)
+# Barra de navegación centrada
+nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([2, 1, 1, 1, 2])  # Espacios a los lados para centrar
+
+with nav_col2:
+    if st.button("Servicios"):
+        st.session_state.seccion = "Servicios"
+with nav_col3:
+    if st.button("Proyectos"):
+        st.session_state.seccion = "Proyectos"
+with nav_col4:
+    if st.button("Contacto"):
+        st.session_state.seccion = "Contacto"
+
+# Inicializar sección si no está definida
+if 'seccion' not in st.session_state:
+    st.session_state.seccion = "Servicios"
+
+# CONTENIDO DE CADA SECCIÓN
+if st.session_state.seccion == "Servicios":
+    st.markdown("### 💼 Servicios")
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.image("https://picsum.photos/400/300?random=1", use_container_width=True)
+        st.markdown("### Estudios de Impacto Ambiental (EIA)")
+        st.write("Evaluación completa del impacto ambiental de proyectos agrícolas o industriales.")
+    with col2:
+        st.image("https://picsum.photos/400/300?random=2", use_container_width=True)
+        st.markdown("### Gestión de residuos agroindustriales")
+        st.write("Planes sostenibles para residuos sólidos y líquidos.")
+    with col3:
+        st.image("https://picsum.photos/400/300?random=3", use_container_width=True)
+        st.markdown("### Análisis de datos ambientales")
+        st.write("Interpretación de datos para decisiones sostenibles.")
+    with col4:
+        st.image("https://picsum.photos/400/300?random=4", use_container_width=True)
+        st.markdown("### Certificaciones y normativas")
+        st.write("Asesoramiento para cumplir con normativas.")
+
+elif st.session_state.seccion == "Proyectos":
+    st.markdown("### 🚀 Proyectos")
+    col5, col6, col7 = st.columns(3)
+    with col5:
+        st.image("https://picsum.photos/400/300?random=5", use_container_width=True)
+        st.markdown("### Proyecto de Evaluación Ambiental")
+        st.write("Recomendaciones para la mejora en la sostenibilidad.")
+        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-1.com)")
+    with col6:
+        st.image("https://picsum.photos/400/300?random=6", use_container_width=True)
+        st.markdown("### Plan de Gestión de Residuos")
+        st.write("Reducción del impacto ambiental agroindustrial.")
+        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-2.com)")
+    with col7:
+        st.image("https://picsum.photos/400/300?random=7", use_container_width=True)
+        st.markdown("### Optimización de Recursos")
+        st.write("Gestión eficiente de recursos naturales.")
+        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-3.com)")
+
+elif st.session_state.seccion == "Contacto":
+    st.markdown("### 📞 Contacto")
+    st.write("¿Tenés alguna consulta o querés discutir un proyecto? ¡Contactanos!")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    whatsapp_link = "https://wa.me/5491234567890?text=Hola,%20tengo%20una%20consulta%20sobre%20tus%20servicios%20ambientales"
+    with col1:
+        if st.button("Enviar WhatsApp"):
+            st.write(f"[Haz clic aquí para hablar por WhatsApp]( {whatsapp_link} )")
+
+    with col2:
+        if st.button("Enviar un correo"):
+            st.write("¡Correo enviado!")
+
+    github_link = "https://github.com/tu-usuario"
+    with col3:
+        if st.button("Visita nuestro GitHub"):
+            st.write(f"[GitHub]( {github_link} )")
+
+    linkedin_link = "https://www.linkedin.com/in/tu-usuario"
+    with col4:
+        if st.button("Visita nuestro LinkedIn"):
+            st.write(f"[LinkedIn]( {linkedin_link} )")
