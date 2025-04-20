@@ -19,12 +19,9 @@ top_col1, top_col2 = st.columns([6, 1])  # Más espacio a la izquierda
 with top_col1:
     col_logo, col_desc = st.columns([1, 3])
     with col_logo:
-        logo = imagen_base64("Imagenes/Logo2.png")
+        logo = imagen_base64("Imagenes/logo.png")
         st.image(logo, width=500)
     with col_desc:
-        st.write("")
-        st.write("")
-        st.write("")
         st.write("")
         st.write("")
         st.markdown("""
@@ -83,6 +80,7 @@ else:
         .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #000000 !important;
         }}
+
         .stButton>button {{
             background-color: #4CAF50;
             color: white;
@@ -115,47 +113,92 @@ if 'seccion' not in st.session_state:
 # CONTENIDO DE CADA SECCIÓN
 if st.session_state.seccion == "Servicios":
     st.markdown("### 💼 Servicios")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.image("https://picsum.photos/400/300?random=1", use_container_width=True)
-        st.markdown("### Estudios de Impacto Ambiental (EIA)")
-        st.write("Evaluación completa del impacto ambiental de proyectos agrícolas o industriales.")
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 10px;'>
+            <h4>Plan de Negocio</h4>
+            <p>Documento fundamental para organizar, estructurar y comunicar una idea de negocio. Contiene el análisis del entorno, definición de objetivos, estructura organizativa, estrategias operativas, y puede incorporar el plan de marketing, evaluación de inversiones y análisis de costos. Es ideal para presentar ante socios, inversores o instituciones de financiamiento.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
     with col2:
         st.image("https://picsum.photos/400/300?random=2", use_container_width=True)
-        st.markdown("### Gestión de residuos agroindustriales")
-        st.write("Planes sostenibles para residuos sólidos y líquidos.")
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Plan de Marketing</h4>
+            <p>Puede integrarse al plan de negocios o desarrollarse de manera independiente. Define las estrategias para posicionar productos o servicios en el mercado, identificando al público objetivo, canales de comunicación y acciones promocionales.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
     with col3:
         st.image("https://picsum.photos/400/300?random=3", use_container_width=True)
-        st.markdown("### Análisis de datos ambientales")
-        st.write("Interpretación de datos para decisiones sostenibles.")
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Evaluación de Proyectos de Inversión</h4>
+            <p>Análisis financiero que permite estimar la viabilidad y rentabilidad de un proyecto. Puede formar parte del plan de negocios o utilizarse como documento técnico específico para decisiones de inversión.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
     with col4:
         st.image("https://picsum.photos/400/300?random=4", use_container_width=True)
-        st.markdown("### Certificaciones y normativas")
-        st.write("Asesoramiento para cumplir con normativas.")
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Análisis de Costos</h4>
+            <p>Estudio detallado de la estructura de costos de una empresa o proyecto. Permite identificar márgenes, optimizar recursos y calcular precios de venta.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-elif st.session_state.seccion == "Proyectos":
-    st.markdown("### 🚀 Proyectos")
-    col5, col6, col7 = st.columns(3)
     with col5:
-        st.image("https://picsum.photos/400/300?random=5", use_container_width=True)
-        st.markdown("### Proyecto de Evaluación Ambiental")
-        st.write("Recomendaciones para la mejora en la sostenibilidad.")
-        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-1.com)")
-    with col6:
-        st.image("https://picsum.photos/400/300?random=6", use_container_width=True)
-        st.markdown("### Plan de Gestión de Residuos")
-        st.write("Reducción del impacto ambiental agroindustrial.")
-        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-2.com)")
-    with col7:
-        st.image("https://picsum.photos/400/300?random=7", use_container_width=True)
-        st.markdown("### Optimización de Recursos")
-        st.write("Gestión eficiente de recursos naturales.")
-        st.markdown("[Ver más sobre el Plan de Gestión de Residuos](https://enlace-a-tu-proyecto-3.com)")
+        st.image("https://picsum.photos/400/300?random=4", use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Dashboards de Control de Gestión</h4>
+            <p>Complemento visual y dinámico para todos los documentos anteriores. Desarrollo tableros interactivos que permiten monitorear indicadores clave (KPI), visualizar tendencias y facilitar la toma de decisiones.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
+#-----------
+# SECCIÓN PROYECTOS
+elif st.session_state.seccion == "Proyectos":    
+    st.markdown("### 🚀 Proyectos")
+    col6, col7, col8 = st.columns(3)
+    
+    with col6:
+        st.image("https://picsum.photos/400/300?random=5", use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Proyecto de Evaluación Ambiental</h4>
+            <p>Recomendaciones para la mejora en la sostenibilidad.</p>
+            <a href="https://enlace-a-tu-proyecto-1.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col7:
+        st.image("https://picsum.photos/400/300?random=6", use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Plan de Gestión de Residuos</h4>
+            <p>Reducción del impacto ambiental agroindustrial.</p>
+            <a href="https://enlace-a-tu-proyecto-2.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col8:
+        st.image("https://picsum.photos/400/300?random=7", use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+            <h4>Optimización de Recursos</h4>
+            <p>Gestión eficiente de recursos naturales.</p>
+            <a href="https://enlace-a-tu-proyecto-3.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+        
 elif st.session_state.seccion == "Contacto":
     st.markdown("### 📞 Contacto")
     st.write("¿Tienes alguna consulta o te gustaría conocerme más? Puedes contactarme por WhatsApp, email, escribirme y verme en LinkedIn, o ver mis proyectos en GitHub. ¡Estoy a tu disposición!")
-
 
     col1, col2, col3, col4 = st.columns(4)
 
