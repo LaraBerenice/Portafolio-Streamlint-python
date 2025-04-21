@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+import urllib.parse
 
 # Configuración de la página
 st.set_page_config(page_title="Servicios Ambientales", layout="wide")
@@ -24,11 +25,15 @@ with top_col1:
     with col_desc:
         st.write("")
         st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
         st.markdown("""
-            ### 📊 Agronegocios | Gestión Ambiental | Análisis de Datos🌱
-            Ledesma Lara Berenice -
-            Licenciada en Gestión de Agroempresas & Estudiante de Maestría en Gestión Ambiental
-        """)
+        <div>
+            <h3 style="font-size: 55px;">📊 Agronegocios, Gestión Ambiental y Análisis de Datos🌱</h3>
+        </div>
+    """, unsafe_allow_html=True)
+
 
 with top_col2:
     col_sol, col_luna = st.columns(2)
@@ -115,45 +120,50 @@ if st.session_state.seccion == "Servicios":
     st.markdown("### 💼 Servicios")
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        st.image("https://picsum.photos/400/300?random=1", use_container_width=True)
+        Servicio_1 = imagen_base64("Imagenes/Servicios/planNegocio.jpeg")
+        st.image(Servicio_1, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 10px;'>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Plan de Negocio</h4>
             <p>Documento fundamental para organizar, estructurar y comunicar una idea de negocio. Contiene el análisis del entorno, definición de objetivos, estructura organizativa, estrategias operativas, y puede incorporar el plan de marketing, evaluación de inversiones y análisis de costos. Es ideal para presentar ante socios, inversores o instituciones de financiamiento.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col2:
-        st.image("https://picsum.photos/400/300?random=2", use_container_width=True)
+        Servicio_2 = imagen_base64("Imagenes/Servicios/marketing-plan.jpg")
+        st.image(Servicio_2, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Plan de Marketing</h4>
             <p>Puede integrarse al plan de negocios o desarrollarse de manera independiente. Define las estrategias para posicionar productos o servicios en el mercado, identificando al público objetivo, canales de comunicación y acciones promocionales.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
-        st.image("https://picsum.photos/400/300?random=3", use_container_width=True)
+        Servicio_3 = imagen_base64("Imagenes/Servicios/Proyectos_de_Inversion.jpg")
+        st.image(Servicio_3, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Evaluación de Proyectos de Inversión</h4>
             <p>Análisis financiero que permite estimar la viabilidad y rentabilidad de un proyecto. Puede formar parte del plan de negocios o utilizarse como documento técnico específico para decisiones de inversión.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col4:
-        st.image("https://picsum.photos/400/300?random=4", use_container_width=True)
+        Servicio_4 = imagen_base64("Imagenes/Servicios/costos.jpeg")
+        st.image(Servicio_4, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Análisis de Costos</h4>
             <p>Estudio detallado de la estructura de costos de una empresa o proyecto. Permite identificar márgenes, optimizar recursos y calcular precios de venta.</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col5:
-        st.image("https://picsum.photos/400/300?random=4", use_container_width=True)
+        Servicio_5 = imagen_base64("Imagenes/Servicios/Dash.jpg")
+        st.image(Servicio_5, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Dashboards de Control de Gestión</h4>
             <p>Complemento visual y dinámico para todos los documentos anteriores. Desarrollo tableros interactivos que permiten monitorear indicadores clave (KPI), visualizar tendencias y facilitar la toma de decisiones.</p>
         </div>
@@ -163,60 +173,181 @@ if st.session_state.seccion == "Servicios":
 # SECCIÓN PROYECTOS
 elif st.session_state.seccion == "Proyectos":    
     st.markdown("### 🚀 Proyectos")
-    col6, col7, col8 = st.columns(3)
+    col6, col7, col8, col9, col10, col11 = st.columns(6)
     
     with col6:
-        st.image("https://picsum.photos/400/300?random=5", use_container_width=True)
+        Proyecto1 = imagen_base64("Imagenes/Proyectos/Brindis real.jpg")
+        st.image(Proyecto1, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
-            <h4>Proyecto de Evaluación Ambiental</h4>
-            <p>Recomendaciones para la mejora en la sostenibilidad.</p>
-            <a href="https://enlace-a-tu-proyecto-1.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Análisis de Inventarios</h4>
+            <p>Fue un trabajo grupal donde la propuesta era analizar los inventarios de
+            Brindis real, una empresa dedicada a comercializar bibidas alcolicas y generar
+            un Dashboard para que se controle dicha gestión haciendo mas óptimo los
+            ingresos y egresos de stock en el almacen.</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
         </div>
         """, unsafe_allow_html=True)
 
     with col7:
-        st.image("https://picsum.photos/400/300?random=6", use_container_width=True)
+        Proyecto2 = imagen_base64("Imagenes/Proyectos/MGV.png")
+        st.image(Proyecto2, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
-            <h4>Plan de Gestión de Residuos</h4>
-            <p>Reducción del impacto ambiental agroindustrial.</p>
-            <a href="https://enlace-a-tu-proyecto-2.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Análisis del Movimiento del Ganado bovino en 2018 en Argentina</h4>
+            <p>El proyecto tuvo objetivos en etapa Training, en donde se analizó
+            ingresos y egresos de ganado en segun tipo de agronegocio y zona para la
+            toma de desiciones ganaderas</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
         </div>
         """, unsafe_allow_html=True)
 
     with col8:
-        st.image("https://picsum.photos/400/300?random=7", use_container_width=True)
+        Proyecto3 = imagen_base64("Imagenes/Proyectos/granos_retail.webp")
+        st.image(Proyecto3, use_container_width=True)
         st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 10px;'>
-            <h4>Optimización de Recursos</h4>
-            <p>Gestión eficiente de recursos naturales.</p>
-            <a href="https://enlace-a-tu-proyecto-3.com">Ver más sobre el Plan de Gestión de Residuos</a>
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Herramientas Google sheet y excel</h4>
+            <p>En este caso son dos proyectos uno en donde se analiza la evolucion
+            historica de la produccion de gran variedad de granos en argentina y el
+            otro en un proyecto en donde se analiza Ventas y costos de una tienda de retail.
+            .</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
+
         </div>
         """, unsafe_allow_html=True)
+        
+    with col9:
+        Proyecto4 = imagen_base64("Imagenes/Proyectos/awc.png")
+        st.image(Proyecto4, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Optimización de Recursos</h4>
+            <p>Gestión eficiente de recursos naturales.</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
 
+        </div>
+        """, unsafe_allow_html=True)   
+    with col10:
+        Proyecto5 = imagen_base64("Imagenes/Proyectos/comidaRapida.png")
+        st.image(Proyecto5, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Optimización de Recursos</h4>
+            <p>Gestión eficiente de recursos naturales.</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
+
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col11:
+        Proyecto6 = imagen_base64("Imagenes/Proyectos/covid19.png")
+        st.image(Proyecto6, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
+            <h4>Optimización de Recursos</h4>
+            <p>Gestión eficiente de recursos naturales.</p>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más ... </a>
+
+        </div>
+        """, unsafe_allow_html=True) 
+        
+         
         
 elif st.session_state.seccion == "Contacto":
-    st.markdown("### 📞 Contacto")
-    st.write("¿Tienes alguna consulta o te gustaría conocerme más? Puedes contactarme por WhatsApp, email, escribirme y verme en LinkedIn, o ver mis proyectos en GitHub. ¡Estoy a tu disposición!")
+    st.markdown("""
+        <div style="padding: 0px; border-radius: 10px;">
+        <h3 style="font-size: 28px;">📞 Contacto</h3>
+        <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 16px; padding: 10px; border-radius: 10px;">
+        <strong>¿Tienes alguna consulta o te gustaría conocerme mejor?</strong> <br>
+        Puedes contactarme a través de <strong>WhatsApp</strong>, <strong>correo
+        electrónico</strong>, verme o escribirme en <strong>LinkedIn</strong>,
+        o explorar mis proyectos públicos en <strong>GitHub</strong>.<br>
+        Todos los enlaces están disponibles aquí abajo: solo haz clic y te llevarán
+        directamente a la sección correspondiente.
+        </p>
+
+        </div>
+    """, unsafe_allow_html=True)
+
 
     col1, col2, col3, col4 = st.columns(4)
 
-    whatsapp_link = "https://wa.me/5491234567890?text=Hola,%20tengo%20una%20consulta%20sobre%20tus%20servicios%20ambientales"
+
+    # Mensaje para WhatsApp
+
+    mensaje = "Hola, tengo una consulta sobre los servicios que ofreces."
+    mensaje_codificado = urllib.parse.quote(mensaje)
+
+# Tu número con código de país sin signos + ni espacios
+    telefono = "5493704003126"
+
+    whatsapp_link = f"https://wa.me/{telefono}?text={mensaje_codificado}"
+
     with col1:
-        if st.button("Enviar WhatsApp"):
-            st.write(f"[Haz clic aquí para hablar por WhatsApp]( {whatsapp_link} )")
+        if st.button("Enviarme un WhatsApp"):
+            st.markdown(
+                f'''
+                <a href="{whatsapp_link}" target="_blank"
+                style="background-color: rgba(255, 255, 255, 0.4); 
+                        padding: 5px; 
+                        border-radius: 10px; 
+                        color:#003366; 
+                        font-weight:bold; 
+                        text-decoration:none; 
+                        font-size:16px;">
+                📱💬 Haz clic aquí...
+                </a>
+                ''',
+                unsafe_allow_html=True
+            )
+
+
+    # Mensaje para correo electrónico
 
     with col2:
-        if st.button("Enviar un correo"):
-            st.write("¡Correo enviado!")
+        if st.button("Enviarme un correo"):
+            st.markdown(
+                f'''
+                <a href="mailto:berenice.ledesma12345@gmail.com" 
+                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
+                ✉️ Haz clic aquí...
+                </a>
+                ''',
+                unsafe_allow_html=True
+            )
+    # Mensaje para LinkedIn
 
-    github_link = "https://github.com/tu-usuario"
+    linkedin_link = "https://www.linkedin.com/in/lara-berenice-l-89527332b/"
     with col3:
-        if st.button("Visita nuestro GitHub"):
-            st.write(f"[GitHub]( {github_link} )")
+        if st.button("Visita mi LinkedIn"):
+            st.markdown(
+                f'''
+                <a href="{linkedin_link}" target="_blank" 
+                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px; color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
+                🔗 LinkedIn - Perfil profesional
+                </a>
+                ''',
+                unsafe_allow_html=True
+        )
 
-    linkedin_link = "https://www.linkedin.com/in/tu-usuario"
+    # Mensaje para GitHub
+
+    github_link = "https://github.com/LaraBerenice"
     with col4:
-        if st.button("Visita nuestro LinkedIn"):
-            st.write(f"[LinkedIn]( {linkedin_link} )")
+        if st.button("Visita mi GitHub"):
+            st.markdown(
+                f'''
+                <a href="{github_link}" target="_blank" 
+                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px; color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
+                🐙 GitHub - Proyectos y código
+                </a>
+                ''',
+                unsafe_allow_html=True
+            )
