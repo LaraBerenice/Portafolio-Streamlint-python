@@ -21,18 +21,18 @@ with top_col1:
     col_logo, col_desc = st.columns([1, 3])
     with col_logo:
         logo = imagen_base64("Imagenes/logo.png")
-        st.image(logo, width=500)
+        st.image(logo, width=400)
     with col_desc:
-        st.write("")
-        st.write("")
         st.write("")
         st.write("")
         st.write("")
         st.markdown("""
         <div>
-            <h3 style="font-size: 55px;">📊 Agronegocios, Gestión Ambiental y Análisis de Datos🌱</h3>
+            <h3 style="font-size: 55px;">
+            📊 Agronegocios, Gestión Ambiental y Análisis de Datos 🌱
+            </h3>
         </div>
-    """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
 
 with top_col2:
