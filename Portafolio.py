@@ -164,7 +164,7 @@ if st.session_state.seccion == "Servicios":
         st.image(Servicio_5, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4> Análisis y Dashboards descriptivos de Control de Gestión</h4>
+            <h4> Análisis y Dashboards descriptivos para Control de Gestión</h4>
             <p>Complemento visual y dinámico para todos los documentos anteriores. Desarrollo tableros interactivos que permiten monitorear indicadores clave (KPI), visualizar tendencias y facilitar la toma de decisiones.</p>
         </div>
         """, unsafe_allow_html=True)
