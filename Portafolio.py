@@ -185,7 +185,7 @@ elif st.session_state.seccion == "Proyectos":
             Real, una empresa dedicada a la comercialización de bebidas alcohólicas.
             Como parte del proyecto, desarrollamos un dashboard de control de gestión
             para optimizar los ingresos y egresos de stock en el almacén.</p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/Analisis_de_Inventarios" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
         </div>
         """, unsafe_allow_html=True)
@@ -200,7 +200,7 @@ elif st.session_state.seccion == "Proyectos":
             los ingresos y egresos de ganado bovino según el tipo de agronegocio
             y la zona geográfica, con el fin de facilitar la toma de decisiones
             en el sector ganadero. </p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/Analisis-Movimiento-Ganado-Vacuno-Argentina-2018" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
         </div>
         """, unsafe_allow_html=True)
@@ -221,7 +221,7 @@ elif st.session_state.seccion == "Proyectos":
                 con el objetivo de evaluar la rentabilidad, detectar oportunidades
                 de mejora y optimizar la gestión comercial.</li>
             </ul>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/analisis-de-datos-en-excel-y-en-google-sheet" style="color: #003366; font-weight: bold;">
             Ver más … </a>
         </div>
         """, unsafe_allow_html=True)
@@ -236,7 +236,7 @@ elif st.session_state.seccion == "Proyectos":
             <h4> Comercio electrónico internacional de bicicletas</h4>
             <p>Análisis de costos y ventas de un comercio electrónico de bicicletas
             a nivel internacional con la generacón de un dashboard en Power BI.</p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/Adventure-Works-Cycles_-AWC-" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
         </div>
@@ -250,7 +250,7 @@ elif st.session_state.seccion == "Proyectos":
             <p> El negocio buscaba organizar sus registros en una base de datos,
             así que creé la base, la modelé de manera óptima para facilitar el análisis
             de la información e inserté los datos.</p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/Descubriendo_la_BD_Fast_Food" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
         </div>
@@ -266,7 +266,7 @@ elif st.session_state.seccion == "Proyectos":
             COVID-19 en Latinoamérica, con el fin de tomar decisiones estratégicas
             para la comercialización de sus vacunas. ¿Dónde le conviene más invertir
             a Biogénesis? ¿En qué país?</p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            <a href="https://github.com/LaraBerenice/Analisis_para_laboratorio_de_vacunacion_en_covid_19" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
         </div>
