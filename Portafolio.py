@@ -278,13 +278,12 @@ elif st.session_state.seccion == "Contacto":
     st.markdown("""
         <div style="padding: 0px; border-radius: 10px;">
         <h3 style="font-size: 28px;">📞 Contacto</h3>
-        <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 16px; padding: 10px; border-radius: 10px;">
+        <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 17px; padding: 10px; border-radius: 10px;">
         <strong>¿Tienes alguna consulta o te gustaría conocerme mejor?</strong> <br>
         Puedes contactarme a través de <strong>WhatsApp</strong>, <strong>correo
         electrónico</strong>, verme o escribirme en <strong>LinkedIn</strong>,
         o explorar mis proyectos públicos en <strong>GitHub</strong>.<br>
-        Todos los enlaces están disponibles aquí abajo: solo haz clic y te llevarán
-        directamente a la sección correspondiente.
+        Todos los enlaces aquí:
         </p>
 
         </div>
@@ -305,63 +304,54 @@ elif st.session_state.seccion == "Contacto":
     whatsapp_link = f"https://wa.me/{telefono}?text={mensaje_codificado}"
 
     with col1:
-        if st.button("Enviarme un WhatsApp"):
-            st.markdown(
-                f'''
-                <a href="{whatsapp_link}" target="_blank"
-                style="background-color: rgba(255, 255, 255, 0.4); 
-                        padding: 5px; 
-                        border-radius: 10px; 
-                        color:#003366; 
-                        font-weight:bold; 
-                        text-decoration:none; 
-                        font-size:16px;">
-                📱💬 Haz clic aquí...
-                </a>
-                ''',
-                unsafe_allow_html=True
-            )
-
-
-    # Mensaje para correo electrónico
-
-    with col2:
-        if st.button("Enviarme un correo"):
-            st.markdown(
-                f'''
-                <a href="mailto:berenice.ledesma12345@gmail.com" 
-                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
-                ✉️ Haz clic aquí...
-                </a>
-                ''',
-                unsafe_allow_html=True
-            )
-    # Mensaje para LinkedIn
-
-    linkedin_link = "https://www.linkedin.com/in/lara-berenice-l-89527332b/"
-    with col3:
-        if st.button("Visita mi LinkedIn"):
-            st.markdown(
-                f'''
-                <a href="{linkedin_link}" target="_blank" 
-                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px; color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
-                🔗 LinkedIn - Perfil profesional
-                </a>
-                ''',
-                unsafe_allow_html=True
+        st.markdown(
+            f'''
+            <a href="{whatsapp_link}" target="_blank">
+                <button style="background-color: #25D366; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">
+                    📱💬 Enviarme un WhatsApp
+                </button>
+            </a>
+            ''',
+            unsafe_allow_html=True
         )
 
-    # Mensaje para GitHub
+    # Correo electrónico
+    with col2:
+        st.markdown(
+            f'''
+            <a href="mailto:berenice.ledesma12345@gmail.com">
+                <button style="background-color: #4285F4; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">
+                    ✉️ Enviarme un correo
+                </button>
+            </a>
+            ''',
+            unsafe_allow_html=True
+        )
 
+    # LinkedIn
+    linkedin_link = "https://www.linkedin.com/in/lara-berenice-l-89527332b/"
+    with col3:
+        st.markdown(
+            f'''
+            <a href="{linkedin_link}" target="_blank">
+                <button style="background-color: #0077B5; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">
+                    🔗 Visita mi LinkedIn
+                </button>
+            </a>
+            ''',
+            unsafe_allow_html=True
+        )
+
+    # GitHub
     github_link = "https://github.com/LaraBerenice"
     with col4:
-        if st.button("Visita mi GitHub"):
-            st.markdown(
-                f'''
-                <a href="{github_link}" target="_blank" 
-                style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px; color:#003366; font-weight:bold; font-size:16px; text-decoration:none;">
-                🐙 GitHub - Proyectos y código
-                </a>
-                ''',
-                unsafe_allow_html=True
-            )
+        st.markdown(
+            f'''
+            <a href="{github_link}" target="_blank">
+                <button style="background-color: #24292E; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">
+                    🐙 Visita mi GitHub
+                </button>
+            </a>
+            ''',
+            unsafe_allow_html=True
+        )
