@@ -3,7 +3,7 @@ import base64
 import urllib.parse
 
 # Configuración de la página
-st.set_page_config(page_title="Servicios Ambientales", layout="wide")
+st.set_page_config(page_title="Servicios Profesionales", layout="wide")
 
 def imagen_base64(ruta):
     with open(ruta, "rb") as img_file:
