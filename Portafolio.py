@@ -164,7 +164,7 @@ if st.session_state.seccion == "Servicios":
         st.image(Servicio_5, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Dashboards de Control de Gestión</h4>
+            <h4> Análisis y Dashboards descriptivos de Control de Gestión</h4>
             <p>Complemento visual y dinámico para todos los documentos anteriores. Desarrollo tableros interactivos que permiten monitorear indicadores clave (KPI), visualizar tendencias y facilitar la toma de decisiones.</p>
         </div>
         """, unsafe_allow_html=True)
@@ -181,10 +181,10 @@ elif st.session_state.seccion == "Proyectos":
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Análisis de Inventarios</h4>
-            <p>Fue un trabajo grupal donde la propuesta era analizar los inventarios de
-            Brindis real, una empresa dedicada a comercializar bibidas alcolicas y generar
-            un Dashboard para que se controle dicha gestión haciendo mas óptimo los
-            ingresos y egresos de stock en el almacen.</p>
+            <p>Fue un trabajo grupal cuyo objetivo fue analizar los inventarios de Brindis
+            Real, una empresa dedicada a la comercialización de bebidas alcohólicas.
+            Como parte del proyecto, desarrollamos un dashboard de control de gestión
+            para optimizar los ingresos y egresos de stock en el almacén.</p>
             <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
         </div>
@@ -195,10 +195,11 @@ elif st.session_state.seccion == "Proyectos":
         st.image(Proyecto2, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Análisis del Movimiento del Ganado bovino en 2018 en Argentina</h4>
-            <p>El proyecto tuvo objetivos en etapa Training, en donde se analizó
-            ingresos y egresos de ganado en segun tipo de agronegocio y zona para la
-            toma de desiciones ganaderas</p>
+            <h4>Análisis del Movimiento del Ganado Bovino en 2018 en Argentina</h4>
+            <p>El proyecto tuvo como objetivo, en su etapa de training, analizar
+            los ingresos y egresos de ganado bovino según el tipo de agronegocio
+            y la zona geográfica, con el fin de facilitar la toma de decisiones
+            en el sector ganadero. </p>
             <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
         </div>
@@ -207,26 +208,34 @@ elif st.session_state.seccion == "Proyectos":
     with col8:
         Proyecto3 = imagen_base64("Imagenes/Proyectos/granos_retail.webp")
         st.image(Proyecto3, use_container_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Herramientas Google sheet y excel</h4>
-            <p>En este caso son dos proyectos uno en donde se analiza la evolucion
-            historica de la produccion de gran variedad de granos en argentina y el
-            otro en un proyecto en donde se analiza Ventas y costos de una tienda de retail.
-            .</p>
-            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
-            Ver más ... </a>
 
+        st.markdown("""
+        <div style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;">
+            <h4>Herramientas: Google Sheets y Excel</h4>
+            <p>Se desarrollaron dos proyectos utilizando hojas de cálculo:</p>
+            <ul>
+                <li>Análisis de la evolución histórica de la producción de granos
+                en Argentina, abarcando una amplia variedad de cultivos por tonelada
+                y superficie producida.</li>
+                <li>Análisis de ventas y costos en una tienda de retail,
+                con el objetivo de evaluar la rentabilidad, detectar oportunidades
+                de mejora y optimizar la gestión comercial.</li>
+            </ul>
+            <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
+            Ver más … </a>
         </div>
         """, unsafe_allow_html=True)
-        
+
+
+   
     with col9:
         Proyecto4 = imagen_base64("Imagenes/Proyectos/awc.png")
         st.image(Proyecto4, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Optimización de Recursos</h4>
-            <p>Gestión eficiente de recursos naturales.</p>
+            <h4> Comercio electrónico internacional de bicicletas</h4>
+            <p>Análisis de costos y ventas de un comercio electrónico de bicicletas
+            a nivel internacional con la generacón de un dashboard en Power BI.</p>
             <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
@@ -237,8 +246,10 @@ elif st.session_state.seccion == "Proyectos":
         st.image(Proyecto5, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Optimización de Recursos</h4>
-            <p>Gestión eficiente de recursos naturales.</p>
+            <h4>Negocio de Comida Rápida</h4>
+            <p> El negocio buscaba organizar sus registros en una base de datos,
+            así que creé la base, la modelé de manera óptima para facilitar el análisis
+            de la información e inserté los datos.</p>
             <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
@@ -250,8 +261,11 @@ elif st.session_state.seccion == "Proyectos":
         st.image(Proyecto6, use_container_width=True)
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-            <h4>Optimización de Recursos</h4>
-            <p>Gestión eficiente de recursos naturales.</p>
+            <h4> Análisis de Mercado – Expansión del COVID-19 </h4>
+            <p>Una empresa bioquímica solicitó un análisis sobre la expansión del
+            COVID-19 en Latinoamérica, con el fin de tomar decisiones estratégicas
+            para la comercialización de sus vacunas. ¿Dónde le conviene más invertir
+            a Biogénesis? ¿En qué país?</p>
             <a href="https://enlace-a-tu-proyecto-3.com" style="color: #003366; font-weight: bold;">
             Ver más ... </a>
 
