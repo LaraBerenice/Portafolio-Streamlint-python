@@ -247,7 +247,7 @@ elif st.session_state.seccion == "Proyectos":
         st.markdown("""
         <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
             <h4>Negocio de Comida Rápida</h4>
-            <p> El negocio buscaba organizar sus registros en una base de datos,
+            <p>El negocio buscaba organizar sus registros en una base de datos,
             así que creé la base, la modelé de manera óptima para facilitar el análisis
             de la información e inserté los datos.</p>
             <a href="https://github.com/LaraBerenice/Descubriendo_la_BD_Fast_Food" style="color: #003366; font-weight: bold;">
