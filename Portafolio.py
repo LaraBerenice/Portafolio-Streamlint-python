@@ -64,7 +64,9 @@ if st.session_state.mode == "Modo Noche":
             background-color: #333333;
             color: #FFFFFF;
             border: 1px solid #FFFFFF;
+            font-weight: bold !important;
         }}
+
         .stImage {{
             border: none !important;
         }}
@@ -90,27 +92,48 @@ else:
             background-color: #4CAF50;
             color: white;
             border: none;
+            font-weight: bold !important;
         }}
         .stImage {{
             border: 2px solid #00000000;
         }}
         </style>
     """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        <style>
+            .stButton > button {
+                font-weight: bold !important;
+                font-size: 18px !important;
+            }
+            div.stButton button {
+                font-weight: bold !important;
+                font-size: 18px !important;
+            }
+        </style>
+    """, unsafe_allow_html=True)
 
 
-# Barra de navegación centrada
-nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([2, 1, 1, 1, 2])  # Espacios a los lados para centrar
+# Inicializar sección si no está definida
+if 'seccion' not in st.session_state:
+    st.session_state.seccion = "Servicios"
+
+# Columnas para navegación
+nav_col1, nav_col2, nav_col3, nav_col4 = st.columns(4)
 
 with nav_col2:
     if st.button("Servicios"):
         st.session_state.seccion = "Servicios"
+
 with nav_col3:
     if st.button("Proyectos"):
         st.session_state.seccion = "Proyectos"
+
 with nav_col4:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
-
+        
+    
 # Inicializar sección si no está definida
 if 'seccion' not in st.session_state:
     st.session_state.seccion = "Servicios"
