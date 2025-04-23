@@ -230,13 +230,13 @@ elif st.session_state.seccion == "Proyectos":
 
         st.markdown("""
         <div style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;">
-            <h4>Herramientas: Google Sheets y Excel</h4>
-            <p>Se desarrollaron dos proyectos utilizando hojas de cálculo:</p>
+            <h4>Utilizando hojas de cálculo:</h4>
+            <p>Dos proyectos:</p>
             <ul>
                 <li>Análisis de la evolución histórica de la producción de granos
-                en Argentina, abarcando una amplia variedad de cultivos por tonelada
-                y superficie producida.</li>
-                <li>Análisis de ventas y costos en una tienda de retail,
+                de Argentina desde 1981 a 2020 en Excel, abarcando una amplia
+                variedad de cultivos por tonelada y superficie producida.</li>
+                <li>Análisis de ventas y costos en una tienda de retail en Google Sheets,
                 con el objetivo de evaluar la rentabilidad, detectar oportunidades
                 de mejora y optimizar la gestión comercial.</li>
             </ul>
@@ -244,7 +244,6 @@ elif st.session_state.seccion == "Proyectos":
             Ver más … </a>
         </div>
         """, unsafe_allow_html=True)
-
 
    
     with col9:
