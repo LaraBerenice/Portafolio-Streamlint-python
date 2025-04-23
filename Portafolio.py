@@ -114,12 +114,8 @@ else:
     """, unsafe_allow_html=True)
 
 
-# Inicializar sección si no está definida
-if 'seccion' not in st.session_state:
-    st.session_state.seccion = "Servicios"
-
-# Columnas para navegación
-nav_col1, nav_col2, nav_col3, nav_col4 = st.columns(4)
+# Columnas para navegación centrada
+nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([3, 1, 1, 1, 3])
 
 with nav_col2:
     if st.button("Servicios"):
