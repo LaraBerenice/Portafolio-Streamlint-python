@@ -1,3 +1,5 @@
+#frond-end - Lara Berenice Ledesma
+
 import streamlit as st
 import base64
 import urllib.parse
@@ -106,7 +108,7 @@ else:
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
-espacio_izquierda, nav1, nav2, nav3, nav4, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 0.7, 2])
+espacio_izquierda, nav1, nav2, nav3, nav4, nav5, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 0.7, 0.9, 2])
 
 with nav1:
     if st.button("Servicios"):
@@ -121,8 +123,13 @@ with nav3:
         st.session_state.seccion = "Blog"
 
 with nav4:
+    if st.button("Cursos"):
+        st.session_state.seccion = "Cursos"
+
+with nav5:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
+
         
 
    
@@ -190,7 +197,7 @@ if st.session_state.seccion == "Servicios":
     
         # Llamada a la acción (CTA) al final de Servicios
     st.markdown("""
-    <div style='text-align: center; margin-top: 30px; background-color: rgba(255,255,255,0.8); padding: 15px; border-radius: 12px;'>
+    <div style='text-align: center; margin-top: 30px; background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 12px;'>
         <h3 style='color: #2E8B57;'>¿Querés llevar tu proyecto al siguiente nivel?</h3>
         <p>Contame tu idea y te ayudo a convertirla en realidad.</p>
         <a href="https://wa.me/5493704003126?text=Hola,%20quiero%20hablar%20sobre%20los%20servicios%20que%20ofreces." target="_blank">
@@ -202,6 +209,7 @@ if st.session_state.seccion == "Servicios":
         
 #-----------
 # SECCIÓN PROYECTOS
+
 elif st.session_state.seccion == "Proyectos":    
     st.markdown("### 🚀 Proyectos")
     col6, col7, col8, col9, col10, col11 = st.columns(6)
@@ -350,6 +358,53 @@ elif st.session_state.seccion == "Blog":
                 st.image(f"data:image/jpeg;base64,{img_b64}")
         else:
             st.error("No se pudo cargar el artículo.")
+
+#------------------------
+# SECCIÓN CURSOS
+
+if st.session_state.seccion == "Cursos":
+    st.markdown("### 🎓 Cursos")
+
+    curso1, curso2, curso3 = st.columns(3)
+
+    with curso1:
+        curso_img1 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img1, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Análisis de Datos con Python</h4>
+            <p>Aprendé a manejar datos usando pandas, matplotlib y otras herramientas esenciales para el análisis.</p>
+            <a href='https://hotmart.com/es/club/analisisdedatosaplicadoalagron' target='_blank'>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with curso2:
+        curso_img2 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img2, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Gestión Ambiental Estratégica</h4>
+            <p>Curso orientado a la toma de decisiones ambientales en proyectos productivos.</p>
+            <a href='https://go.hotmart.com/XXXXXXX_GESTION_AMBIENTAL' target='_blank'>
+                <button style='padding:8px 12px; background-color:#388E3C; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with curso3:
+        curso_img3 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img3, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Economía y Agronegocios</h4>
+            <p>Conocé el funcionamiento del mercado agroindustrial, sus actores y estrategias competitivas.</p>
+            <a href='https://go.hotmart.com/XXXXXXX_AGRONEGOCIOS' target='_blank'>
+                <button style='padding:8px 12px; background-color:#1976D2; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
 
 #------------------------
