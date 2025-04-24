@@ -1,9 +1,11 @@
 import streamlit as st
 import base64
 import urllib.parse
+import requests
+from urllib.parse import quote
 
 # Configuración de la página
-st.set_page_config(page_title="Servicios Profesionales", layout="wide")
+st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
 def imagen_base64(ruta):
     with open(ruta, "rb") as img_file:
@@ -91,45 +93,39 @@ else:
         .stButton>button {{
             background-color: #4CAF50;
             color: white;
-            border: none;
+            border: 1px #4CAF50 solid;
             font-weight: bold !important;
+            font-size: 15px !important;
         }}
         .stImage {{
             border: 2px solid #00000000;
         }}
         </style>
     """, unsafe_allow_html=True)
-    
-    st.markdown("""
-        <style>
-            .stButton > button {
-                font-weight: bold !important;
-                font-size: 18px !important;
-            }
-            div.stButton button {
-                font-weight: bold !important;
-                font-size: 18px !important;
-            }
-        </style>
-    """, unsafe_allow_html=True)
 
 
 # Columnas para navegación centrada
-nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([3, 1, 1, 1, 3])
+# Crear espacio en blanco a los costados para centrar los botones
+espacio_izquierda, nav1, nav2, nav3, nav4, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 0.7, 2])
 
-with nav_col2:
+with nav1:
     if st.button("Servicios"):
         st.session_state.seccion = "Servicios"
 
-with nav_col3:
+with nav2:
     if st.button("Proyectos"):
         st.session_state.seccion = "Proyectos"
 
-with nav_col4:
+with nav3:
+    if st.button(" Blog "):
+        st.session_state.seccion = "Blog"
+
+with nav4:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
         
-    
+
+   
 # Inicializar sección si no está definida
 if 'seccion' not in st.session_state:
     st.session_state.seccion = "Servicios"
@@ -187,7 +183,23 @@ if st.session_state.seccion == "Servicios":
             <p>Complemento visual y dinámico para todos los documentos anteriores. Desarrollo tableros interactivos que permiten monitorear indicadores clave (KPI), visualizar tendencias y facilitar la toma de decisiones.</p>
         </div>
         """, unsafe_allow_html=True)
+        
+        
+#----- call to action ----
+    
+    
+        # Llamada a la acción (CTA) al final de Servicios
+    st.markdown("""
+    <div style='text-align: center; margin-top: 30px; background-color: rgba(255,255,255,0.8); padding: 15px; border-radius: 12px;'>
+        <h3 style='color: #2E8B57;'>¿Querés llevar tu proyecto al siguiente nivel?</h3>
+        <p>Contame tu idea y te ayudo a convertirla en realidad.</p>
+        <a href="https://wa.me/5493704003126?text=Hola,%20quiero%20hablar%20sobre%20los%20servicios%20que%20ofreces." target="_blank">
+            <button style='background-color: #25D366; color: white; font-weight: bold; font-size: 18px; padding: 10px 25px; border: none; border-radius: 8px;'>📲 Pedime presupuesto por WhatsApp</button>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
+        
 #-----------
 # SECCIÓN PROYECTOS
 elif st.session_state.seccion == "Proyectos":    
@@ -290,8 +302,58 @@ elif st.session_state.seccion == "Proyectos":
         </div>
         """, unsafe_allow_html=True) 
         
-         
+
+#---loque dicen los clientes ----       
+            
+    # Testimonios de clientes
+    st.markdown("### 🗨️👥💬 Testimonios 🌟 ")
+    st.markdown("""
+    <div style="background-color: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 12px;">
+        <p><strong>👩‍🌾 💬María G. (Productora agrícola):</strong> "El análisis de costos que me preparaste me ayudó a optimizar los gastos en la producción. ¡Gracias por tu dedicación!"</p>
+        <p><strong>👨‍💼 💬 Pablo R. (Emprendedor):</strong> "Con tu plan de negocios pude conseguir el crédito que necesitaba. Excelente acompañamiento."</p>
+        <p><strong>👩‍🔬 💬Laura M. (Ingeniera ambiental):</strong> "Tu diagnóstico fue clave para mejorar nuestros indicadores de impacto. ¡Gran profesionalismo y claridad técnica!"</p>
+        <p><strong>👨‍🌍 💬 Diego F. (Consultor en sostenibilidad):</strong> "Gracias a tu asesoramiento, pudimos diseñar una estrategia ambiental más efectiva para nuestros clientes."</p>
+        <p><strong>👩‍💻 💬 Sofía T. (Analista de datos):</strong> "El dashboard que desarrollaste fue justo lo que necesitábamos para tomar decisiones más informadas. Muy recomendable."</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+#---------------------------------
+# BLOG -----------------
+
+fastapi_url = "http://127.0.0.1:8000"
+
+if "mostrar_articulo" not in st.session_state:
+    st.session_state.mostrar_articulo = False
+
+elif st.session_state.seccion == "Blog":
+    st.markdown("### ✍️ Artículos: ")
+
+    # Diccionario de títulos legibles y sus rutas/títulos codificados
+    opciones = {
+        "Cómo hacer un Plan de Negocio paso a paso": "plan_negocio",
+        "5 indicadores clave para el control de gestión": "5 indicadores clave para el control de gestión",
+        "¿Por qué es importante el análisis de datos en los agronegocios?": "¿Por qué es importante el análisis de datos en los agronegocios?"
+    }
+
+    articulo_legible = st.selectbox("📚 Seleccioná un artículo:", list(opciones.keys()))
+
+    if st.button("📖 Ver artículo"):
+        st.session_state.mostrar_articulo = True
+
+    if st.session_state.mostrar_articulo:
+        titulo_codificado = quote(opciones[articulo_legible])
+        response = requests.get(f"{fastapi_url}/get_article?title={titulo_codificado}")
         
+        if response.status_code == 200:
+            imagenes = response.json()["imagenes"]
+            for img_b64 in imagenes:
+                st.image(f"data:image/jpeg;base64,{img_b64}")
+        else:
+            st.error("No se pudo cargar el artículo.")
+
+
+#------------------------
+                
 elif st.session_state.seccion == "Contacto":
     st.markdown("""
         <div style="padding: 0px; border-radius: 10px;">
