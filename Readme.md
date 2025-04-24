@@ -9,5 +9,3 @@
 - Streamlit (Aplicación interactiva desarrollada con **Streamlit**.)
 
 - HTML + CSS (para personalización de estilo)
-
-- Herramientas de visualización (dashboards y gráficos)
