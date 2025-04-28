@@ -197,7 +197,7 @@ if st.session_state.seccion == "Servicios":
     
         # Llamada a la acción (CTA) al final de Servicios
     st.markdown("""
-    <div style='text-align: center; margin-top: 30px; background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 12px;'>
+    <div style='text-align: center; margin-top: 30px; background-color: rgba(220,220,220,0.8); padding: 15px; border-radius: 10px;'>
         <h3 style='color: #2E8B57;'>¿Querés llevar tu proyecto al siguiente nivel?</h3>
         <p>Contame tu idea y te ayudo a convertirla en realidad.</p>
         <a href="https://wa.me/5493704003126?text=Hola,%20quiero%20hablar%20sobre%20los%20servicios%20que%20ofreces." target="_blank">
@@ -250,7 +250,7 @@ elif st.session_state.seccion == "Proyectos":
 
         st.markdown("""
         <div style="background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;">
-            <h4>Utilizando hojas de cálculo:</h4>
+            <h4>Análisis de datos con hojas de cálculo:</h4>
             <p>Dos proyectos:</p>
             <ul>
                 <li>Análisis de la evolución histórica de la producción de granos
@@ -316,15 +316,29 @@ elif st.session_state.seccion == "Proyectos":
     # Testimonios de clientes
     st.markdown("### 🗨️👥💬 Testimonios 🌟 ")
     st.markdown("""
-    <div style="background-color: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 12px;">
+    <div style="background-color: rgba(220, 220, 220, 0.6); padding: 15px; border-radius: 10px;">
         <p><strong>👩‍🌾 💬María G. (Productora agrícola):</strong> "El análisis de costos que me preparaste me ayudó a optimizar los gastos en la producción. ¡Gracias por tu dedicación!"</p>
         <p><strong>👨‍💼 💬 Pablo R. (Emprendedor):</strong> "Con tu plan de negocios pude conseguir el crédito que necesitaba. Excelente acompañamiento."</p>
         <p><strong>👩‍🔬 💬Laura M. (Ingeniera ambiental):</strong> "Tu diagnóstico fue clave para mejorar nuestros indicadores de impacto. ¡Gran profesionalismo y claridad técnica!"</p>
         <p><strong>👨‍🌍 💬 Diego F. (Consultor en sostenibilidad):</strong> "Gracias a tu asesoramiento, pudimos diseñar una estrategia ambiental más efectiva para nuestros clientes."</p>
         <p><strong>👩‍💻 💬 Sofía T. (Analista de datos):</strong> "El dashboard que desarrollaste fue justo lo que necesitábamos para tomar decisiones más informadas. Muy recomendable."</p>
+        <p><strong>👨‍🔧 💬 Andrés V. (Técnico agroindustrial):</strong> "El informe que elaboraste nos permitió detectar áreas de mejora en la cadena de producción. ¡Un trabajo impecable!"</p>
+        <p><strong>👩‍🏫 💬 Clara S. (Docente universitaria):</strong> "Tu presentación sobre sostenibilidad fue muy clara y enriquecedora para mis alumnos. ¡Gracias por compartir tus conocimientos!"</p>
+        <p><strong>👨‍💻 💬 Martín G. (Desarrollador de software):</strong> "La base de datos que estructuraste nos facilitó muchísimo el análisis de tendencias. Excelente trabajo técnico y compromiso."</p>
+        <p><strong>👩‍💼 💬 Paula D. (Gerente de proyectos):</strong> "Tu enfoque estratégico y detallado fue fundamental para que lográramos nuestros objetivos de certificación ambiental."</p>
+        <p><strong>👨‍🌾 💬 Esteban L. (Productor ganadero):</strong> "Tus recomendaciones sobre manejo sostenible marcaron una gran diferencia en nuestra productividad."</p>
+        <p><strong>👩‍🔬 💬 Verónica M. (Especialista en calidad ambiental):</strong> "El informe técnico que entregaste superó nuestras expectativas en precisión y profundidad."</p>
+        <p><strong>👨‍💼 💬 Ricardo P. (Gerente comercial):</strong> "Gracias a tu análisis de mercado pudimos redirigir nuestras estrategias de venta de manera efectiva."</p>
+        <p><strong>👩‍⚕️ 💬 Mariana R. (Coordinadora de programas de salud):</strong> "El estudio de impacto social que realizaste nos permitió fortalecer nuestras campañas de concientización."</p>
+        <hr style="border: none; border-top: 2px solid #666; margin: 10px 0;">
+        <p style="text-align: center; font-weight: bold; color: #444; font-size: 20px; margin: 10px;">Cada proyecto, un nuevo desafío superado. ¡Gracias por confiar! 💼✨</p>
+        <p style="text-align: center; font-size: 26px; margin: 10px;">❤️</p>
+
+
+</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
 #---------------------------------
 # BLOG -----------------
 
@@ -339,8 +353,8 @@ elif st.session_state.seccion == "Blog":
     # Diccionario de títulos legibles y sus rutas/títulos codificados
     opciones = {
         "Cómo hacer un Plan de Negocio paso a paso": "plan_negocio",
-        "5 indicadores clave para el control de gestión": "5 indicadores clave para el control de gestión",
-        "¿Por qué es importante el análisis de datos en los agronegocios?": "¿Por qué es importante el análisis de datos en los agronegocios?"
+        "Cómo usar el análisis de datos para tomar mejores decisiones en el agro": "articulo2",
+        "¿Evaluar un proyecto de inversión agropecuaria: lo que necesitás saber antes de dar el paso": "articulo3"
     }
 
     articulo_legible = st.selectbox("📚 Seleccioná un artículo:", list(opciones.keys()))
@@ -388,7 +402,7 @@ if st.session_state.seccion == "Cursos":
             <h4>Gestión Ambiental Estratégica</h4>
             <p>Curso orientado a la toma de decisiones ambientales en proyectos productivos.</p>
             <a href='https://go.hotmart.com/XXXXXXX_GESTION_AMBIENTAL' target='_blank'>
-                <button style='padding:8px 12px; background-color:#388E3C; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
             </a>
         </div>
         """, unsafe_allow_html=True)
@@ -401,7 +415,7 @@ if st.session_state.seccion == "Cursos":
             <h4>Economía y Agronegocios</h4>
             <p>Conocé el funcionamiento del mercado agroindustrial, sus actores y estrategias competitivas.</p>
             <a href='https://go.hotmart.com/XXXXXXX_AGRONEGOCIOS' target='_blank'>
-                <button style='padding:8px 12px; background-color:#1976D2; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
             </a>
         </div>
         """, unsafe_allow_html=True)
