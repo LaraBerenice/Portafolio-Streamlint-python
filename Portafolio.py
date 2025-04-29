@@ -131,8 +131,7 @@ with nav5:
         st.session_state.seccion = "Contacto"
 
         
-
-   
+ 
 # Inicializar sección si no está definida
 if 'seccion' not in st.session_state:
     st.session_state.seccion = "Servicios"
@@ -388,7 +387,7 @@ if st.session_state.seccion == "Cursos":
         <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
             <h4>Análisis de Datos con Python</h4>
             <p>Aprendé a manejar datos usando pandas, matplotlib y otras herramientas esenciales para el análisis.</p>
-            <a href='https://hotmart.com/es/club/analisisdedatosaplicadoalagron' target='_blank'>
+            <a href='https://ledesma-lara12345.hotmart.host/analisis-de-datos-aplicado-al-agronegocio-e4b986b8-40c1-4978-9e02-9d65662337fe' target='_blank'>
                 <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
             </a>
         </div>
