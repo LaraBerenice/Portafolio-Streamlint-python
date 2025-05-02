@@ -108,14 +108,14 @@ else:
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
-espacio_izquierda, nav1, nav2, nav3, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 2])
+espacio_izquierda, nav1, nav2, nav3, espacio_derecha = st.columns([2.1, 0.6, 0.95, 0.6, 2.2])
 
 with nav1:
     if st.button("Servicios"):
         st.session_state.seccion = "Servicios"
 
 with nav2:
-    if st.button("Proyectos"):
+    if st.button("Proyectos públicos"):
         st.session_state.seccion = "Proyectos"
 
 with nav3:
