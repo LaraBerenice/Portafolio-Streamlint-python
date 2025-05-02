@@ -345,7 +345,7 @@ elif st.session_state.seccion == "Contacto":
 
 
     
-    espacio1, col1, col2, col3, col4, espacio2 = st.columns([0.15, 1, 0.9, 0.9, 0.6, 0.1])
+    espacio1, col1, col2, col3, col4, espacio2 = st.columns([0.2, 0.8, 0.7, 0.67, 0.56, 0.1])
 
 
     # Mensaje para WhatsApp
