@@ -115,7 +115,7 @@ with nav1:
         st.session_state.seccion = "Servicios"
 
 with nav2:
-    if st.button("Proyectos públicos"):
+    if st.button("Proyectos"):
         st.session_state.seccion = "Proyectos"
 
 with nav3:
