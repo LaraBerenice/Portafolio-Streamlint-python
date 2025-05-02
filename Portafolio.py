@@ -108,7 +108,7 @@ else:
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
-espacio_izquierda, nav1, nav2, nav3, nav4, nav5, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 0.7, 0.9, 2])
+espacio_izquierda, nav1, nav2, nav3, espacio_derecha = st.columns([2.2, 0.8, 0.8, 0.6, 2])
 
 with nav1:
     if st.button("Servicios"):
@@ -119,14 +119,6 @@ with nav2:
         st.session_state.seccion = "Proyectos"
 
 with nav3:
-    if st.button(" Blog "):
-        st.session_state.seccion = "Blog"
-
-with nav4:
-    if st.button("Cursos"):
-        st.session_state.seccion = "Cursos"
-
-with nav5:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
 
@@ -319,16 +311,11 @@ elif st.session_state.seccion == "Proyectos":
         <p><strong>👩‍🌾 💬María G. (Productora agrícola):</strong> "El análisis de costos que me preparaste me ayudó a optimizar los gastos en la producción. ¡Gracias por tu dedicación!"</p>
         <p><strong>👨‍💼 💬 Pablo R. (Emprendedor):</strong> "Con tu plan de negocios pude conseguir el crédito que necesitaba. Excelente acompañamiento."</p>
         <p><strong>👩‍🔬 💬Laura M. (Ingeniera ambiental):</strong> "Tu diagnóstico fue clave para mejorar nuestros indicadores de impacto. ¡Gran profesionalismo y claridad técnica!"</p>
-        <p><strong>👨‍🌍 💬 Diego F. (Consultor en sostenibilidad):</strong> "Gracias a tu asesoramiento, pudimos diseñar una estrategia ambiental más efectiva para nuestros clientes."</p>
         <p><strong>👩‍💻 💬 Sofía T. (Analista de datos):</strong> "El dashboard que desarrollaste fue justo lo que necesitábamos para tomar decisiones más informadas. Muy recomendable."</p>
         <p><strong>👨‍🔧 💬 Andrés V. (Técnico agroindustrial):</strong> "El informe que elaboraste nos permitió detectar áreas de mejora en la cadena de producción. ¡Un trabajo impecable!"</p>
         <p><strong>👩‍🏫 💬 Clara S. (Docente universitaria):</strong> "Tu presentación sobre sostenibilidad fue muy clara y enriquecedora para mis alumnos. ¡Gracias por compartir tus conocimientos!"</p>
         <p><strong>👨‍💻 💬 Martín G. (Desarrollador de software):</strong> "La base de datos que estructuraste nos facilitó muchísimo el análisis de tendencias. Excelente trabajo técnico y compromiso."</p>
-        <p><strong>👩‍💼 💬 Paula D. (Gerente de proyectos):</strong> "Tu enfoque estratégico y detallado fue fundamental para que lográramos nuestros objetivos de certificación ambiental."</p>
-        <p><strong>👨‍🌾 💬 Esteban L. (Productor ganadero):</strong> "Tus recomendaciones sobre manejo sostenible marcaron una gran diferencia en nuestra productividad."</p>
-        <p><strong>👩‍🔬 💬 Verónica M. (Especialista en calidad ambiental):</strong> "El informe técnico que entregaste superó nuestras expectativas en precisión y profundidad."</p>
         <p><strong>👨‍💼 💬 Ricardo P. (Gerente comercial):</strong> "Gracias a tu análisis de mercado pudimos redirigir nuestras estrategias de venta de manera efectiva."</p>
-        <p><strong>👩‍⚕️ 💬 Mariana R. (Coordinadora de programas de salud):</strong> "El estudio de impacto social que realizaste nos permitió fortalecer nuestras campañas de concientización."</p>
         <hr style="border: none; border-top: 2px solid #666; margin: 10px 0;">
         <p style="text-align: center; font-weight: bold; color: #444; font-size: 20px; margin: 10px;">Cada proyecto, un nuevo desafío superado. ¡Gracias por confiar! 💼✨</p>
         <p style="text-align: center; font-size: 26px; margin: 10px;">❤️</p>
@@ -339,87 +326,6 @@ elif st.session_state.seccion == "Proyectos":
     """, unsafe_allow_html=True)
     
 #---------------------------------
-# BLOG -----------------
-
-fastapi_url = "http://127.0.0.1:8000"
-
-if "mostrar_articulo" not in st.session_state:
-    st.session_state.mostrar_articulo = False
-
-elif st.session_state.seccion == "Blog":
-    st.markdown("### ✍️ Artículos: ")
-
-    # Diccionario de títulos legibles y sus rutas/títulos codificados
-    opciones = {
-        "Cómo hacer un Plan de Negocio paso a paso": "plan_negocio",
-        "Cómo usar el análisis de datos para tomar mejores decisiones en el agro": "articulo2",
-        "¿Evaluar un proyecto de inversión agropecuaria: lo que necesitás saber antes de dar el paso": "articulo3"
-    }
-
-    articulo_legible = st.selectbox("📚 Seleccioná un artículo:", list(opciones.keys()))
-
-    if st.button("📖 Ver artículo"):
-        st.session_state.mostrar_articulo = True
-
-    if st.session_state.mostrar_articulo:
-        titulo_codificado = quote(opciones[articulo_legible])
-        response = requests.get(f"{fastapi_url}/get_article?title={titulo_codificado}")
-        
-        if response.status_code == 200:
-            imagenes = response.json()["imagenes"]
-            for img_b64 in imagenes:
-                st.image(f"data:image/jpeg;base64,{img_b64}")
-        else:
-            st.error("No se pudo cargar el artículo.")
-
-#------------------------
-# SECCIÓN CURSOS
-
-if st.session_state.seccion == "Cursos":
-    st.markdown("### 🎓 Cursos")
-
-    curso1, curso2, curso3 = st.columns(3)
-
-    with curso1:
-        curso_img1 = imagen_base64("Imagenes/Cursos/images.jpeg")
-        st.image(curso_img1, use_container_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Análisis de Datos con Python</h4>
-            <p>Aprendé a manejar datos usando pandas, matplotlib y otras herramientas esenciales para el análisis.</p>
-            <a href='https://ledesma-lara12345.hotmart.host/analisis-de-datos-aplicado-al-agronegocio-e4b986b8-40c1-4978-9e02-9d65662337fe' target='_blank'>
-                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with curso2:
-        curso_img2 = imagen_base64("Imagenes/Cursos/images.jpeg")
-        st.image(curso_img2, use_container_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Gestión Ambiental Estratégica</h4>
-            <p>Curso orientado a la toma de decisiones ambientales en proyectos productivos.</p>
-            <a href='https://go.hotmart.com/XXXXXXX_GESTION_AMBIENTAL' target='_blank'>
-                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with curso3:
-        curso_img3 = imagen_base64("Imagenes/Cursos/images.jpeg")
-        st.image(curso_img3, use_container_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Economía y Agronegocios</h4>
-            <p>Conocé el funcionamiento del mercado agroindustrial, sus actores y estrategias competitivas.</p>
-            <a href='https://go.hotmart.com/XXXXXXX_AGRONEGOCIOS' target='_blank'>
-                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-
 #------------------------
                 
 elif st.session_state.seccion == "Contacto":
