@@ -334,15 +334,12 @@ elif st.session_state.seccion == "Contacto":
         <h3 style="font-size: 28px;">📞 Contacto</h3>
         <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 17px; padding: 10px; border-radius: 10px;">
         <strong>¿Tienes alguna consulta o te gustaría conocerme mejor?</strong> <br>
-        Puedes contactarme a través de <strong>WhatsApp</strong>, <strong>correo
-        electrónico</strong>, verme o escribirme en <strong>LinkedIn</strong>,
-        o explorar mis proyectos públicos en <strong>GitHub</strong>.<br>
-        Todos los enlaces aquí:
+        Puedes contactarme por <strong>WhatsApp</strong>, <strong>correo electrónico</strong> o a través de <strong>LinkedIn</strong>. <br>
+        También puedes explorar mis proyectos públicos en <strong>GitHub</strong>.<br>
+        Encuentra todos los enlaces aquí:
         </p>
-
         </div>
     """, unsafe_allow_html=True)
-
 
     
     espacio1, col1, col2, col3, col4, espacio2 = st.columns([0.2, 0.8, 0.7, 0.67, 0.56, 0.1])
