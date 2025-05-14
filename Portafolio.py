@@ -19,24 +19,23 @@ if 'mode' not in st.session_state:
     st.session_state.mode = "Modo Día"
 
 # Línea superior con logo + descripción a la izquierda y sol/luna a la derecha
-top_col1, top_col2 = st.columns([6, 1])  # Más espacio a la izquierda
+
+top_col1, top_col2 = st.columns([6, 1])
 
 with top_col1:
-    col_logo, col_desc = st.columns([1, 3])
-    with col_logo:
-        logo = imagen_base64("Imagenes/logo.png")
-        st.image(logo, width=400)
-    with col_desc:
-        st.write("")
-        st.write("")
-        st.write("")
-        st.markdown("""
-        <div>
-            <h3 style="font-size: 55px;">
-            📊 Agronegocios, Gestión Ambiental y Análisis de Datos 🌱
+    logo = imagen_base64("Imagenes/logo.png")
+    st.markdown(
+    f"""
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+        <img src="{logo}" style="width: 155px; height: 155px;; object-fit: contain; border-radius: 15px; margin-right: -35px;margin-top: 5px;">
+        <div style="text-align: left;">
+            <h3 style="font-size: 35px;text-align: center; margin-right:-110px;margin-top: 5px; font-weight: bold;">
+                Agronegocios, Gestión Ambiental y <br> Análisis de Datos 📊 🌱
             </h3>
         </div>
-            """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
+
 
 
 with top_col2:
