@@ -29,7 +29,7 @@ with top_col1:
     <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
         <img src="{logo}" style="width: 155px; height: 155px;; object-fit: contain; border-radius: 15px; margin-right: -35px;margin-top: 5px;">
         <div style="text-align: left;">
-            <h3 style="font-size: 35px;text-align: center; margin-right:-101px;margin-top: 5px; font-weight: bold;">
+            <h3 style="font-size: 35px;text-align: center; margin-right:-105px;margin-top: 5px; font-weight: bold;">
                 Agronegocios, Gestión Ambiental y <br> Análisis de Datos 📊 🌱
             </h3>
         </div>
