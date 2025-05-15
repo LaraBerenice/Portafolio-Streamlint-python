@@ -57,7 +57,8 @@ st.markdown("""
 
     .titulo-texto h3 {
         font-size: 22px !important;
-        margin: 0 auto !important;
+        text-align: center !important;
+        margin: 0 auto 0 20px !important; /* top, right, bottom, left */  
     }
 
     /* Botones en columna */
