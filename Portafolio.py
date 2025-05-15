@@ -52,7 +52,7 @@ st.markdown("""
     .logo {
         width: 100px !important;
         height: 100px !important;
-        margin: 0 auto 10px auto !important;
+        margin: 0 0 10px 30px !important; /* top, right, bottom, left */
     }
 
     .titulo-texto h3 {
