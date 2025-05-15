@@ -32,6 +32,32 @@ st.markdown("""
         margin-top: 10px !important;
     }
 
+    /* ---------------- Botones sol/luna ---------------- */
+    /* Contenedor de los botones sol y luna: hacerlos en fila centrada con separación y tamaño adecuado */
+    /* Usamos los selectores de los botones de Streamlit */
+    .stButton > button {
+        font-size: 18px !important; /* un poco más grande para móviles */
+        padding: 10px 14px !important;
+        min-width: 60px !important; /* ancho mínimo para que no se achiquen mucho */
+        margin: 5px 5px 5px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Contenedor que tiene a los botones (col_sol, col_luna) - hacemos que queden en fila y centrados */
+    div[data-testid="column"] > div > button:has-text("☀️"), 
+    div[data-testid="column"] > div > button:has-text("🌙") {
+        /* No siempre funciona has-text en CSS, así que mejor aplicar a todos botones dentro top_col2 */
+    }
+
+    /* Mejor opción: ajustamos la columna donde están sol y luna (top_col2) */
+    /* Usando style para el top_col2 que es st.columns([6,1]) el último ocupa poco */
+    /* Como workaround, usar flexbox para el contenedor que tiene esos botones */
+    /* Así que añadir estilo para ese div */
+    /* Pero con streamlit no es sencillo seleccionar divs sin clases personalizadas */
+
+    /* Alternativa: aplicar a todos botones del top_col2 un estilo */
+    /* O crear un div personalizado dentro top_col2 y aplicar estilo */
+
     /* ---------------- Botones de navegación ---------------- */
     /* Para los botones Servicios, Proyectos, Contacto (los que están en columnas nav1, nav2, nav3) */
     /* Ajustamos tamaño y que se ubiquen verticalmente en móviles */
