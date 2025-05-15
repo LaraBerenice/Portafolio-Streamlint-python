@@ -52,13 +52,13 @@ st.markdown("""
     .logo {
         width: 100px !important;
         height: 100px !important;
-        margin: 0 0 10px 35px !important; /* top, right, bottom, left */
+        margin: 0 0 10px 33px !important; /* top, right, bottom, left */
     }
 
     .titulo-texto h3 {
         font-size: 22px !important;
         text-align: center !important;
-        margin: 0 auto 0 35px !important; /* top, right, bottom, left */  
+        margin: 0 auto 0 33px !important; /* top, right, bottom, left */  
     }
 
     /* Botones en columna */
