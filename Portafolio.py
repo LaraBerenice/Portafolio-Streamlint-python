@@ -6,12 +6,6 @@ import urllib.parse
 import requests
 from urllib.parse import quote
 
-import streamlit as st
-import base64
-import urllib.parse
-import requests
-from urllib.parse import quote
-
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
