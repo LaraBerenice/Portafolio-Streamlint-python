@@ -36,7 +36,6 @@ if 'mode' not in st.session_state:
     st.session_state.mode = "Modo Día"
 
 # Línea superior con logo + descripción a la izquierda y sol/luna a la derecha
-
 top_col1, top_col2 = st.columns([6, 1])
 
 with top_col1:
@@ -84,6 +83,7 @@ if st.session_state.mode == "Modo Noche":
             border: 1px solid #FFFFFF;
             font-weight: bold !important;
         }}
+
         .stImage {{
             border: none !important;
         }}
@@ -104,6 +104,7 @@ else:
         .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #000000 !important;
         }}
+
         .stButton>button {{
             background-color: #4CAF50;
             color: white;
@@ -116,6 +117,35 @@ else:
         }}
         </style>
     """, unsafe_allow_html=True)
+
+# --- Aquí el CSS para hacer responsive SIN CAMBIAR ESTRUCTURA NI ESTILOS ORIGINALES ---
+st.markdown("""
+<style>
+@media (max-width: 768px) {
+    /* Cambiar flex-direction a columna y centrar */
+    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    /* Ajustar tamaño y margen de la imagen logo */
+    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] > img {
+        width: 100px !important;
+        height: 100px !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    /* Ajustar título para centrado y márgenes */
+    div[style*="text-align: left;"] h3 {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin-right: 0 !important;
+        margin-top: 10px !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
 
 
 
