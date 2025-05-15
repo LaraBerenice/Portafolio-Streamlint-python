@@ -12,43 +12,70 @@ st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambie
 # Estilos personalizados
 st.markdown("""
 <style>
+/* Estilo general para escritorio */
+.titulo-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.logo {
+    width: 155px;
+    height: 155px;
+    object-fit: contain;
+    border-radius: 15px;
+    margin-right: -35px;
+    margin-top: 5px;
+}
+
+.titulo-texto h3 {
+    font-size: 35px;
+    text-align: center;
+    margin-right: -100px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Responsive para móvil */
 @media (max-width: 768px) {
-    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] {
+    .titulo-contenedor {
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-    }
-    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] > img {
-        width: 100px !important;
-        height: 100px !important;
-        margin-right: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 10px !important;
-    }
-    div[style*="text-align: left;"] h3 {
-        font-size: 22px !important;
-        text-align: center !important;
-        margin-right: 0 !important;
-        margin-top: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* Asegurar botones de navegación apilados verticalmente */
+    .logo {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 auto 10px auto !important;
+    }
+
+    .titulo-texto h3 {
+        font-size: 22px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    /* Botones en columna */
     .css-1lcbmhc.e1fqkh3o3 {
         flex-direction: column !important;
         align-items: center !important;
     }
 
-    /* Botones estilo móvil */
     .stButton > button {
         font-size: 18px !important;
         padding: 10px 14px !important;
         min-width: 60px !important;
-        margin: 5px 5px 5px 0 !important;
+        margin: 5px !important;
         border-radius: 8px !important;
         width: auto !important;
     }
 
-    /* Forzar alineación a la derecha del contenedor de botones */
     #modo-switch {
         text-align: right !important;
         margin-top: 10px;
@@ -57,6 +84,7 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Script para detectar móvil
 st.markdown("""
@@ -88,17 +116,23 @@ top_col1, top_col2 = st.columns([6, 1])
 
 with top_col1:
     logo = imagen_base64("Imagenes/logo.png")
+    
+    
     st.markdown(
     f"""
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-        <img src="{logo}" style="width: 155px; height: 155px; object-fit: contain; border-radius: 15px; margin-right: -35px; margin-top: 5px;">
-        <div style="text-align: left;">
-            <h3 style="font-size: 35px; text-align: center; margin-right:-100px; margin-top: 5px; font-weight: bold;">
+    <div class="titulo-contenedor">
+        <img src="{logo}" class="logo">
+        <div class="titulo-texto">
+            <h3>
                 Agronegocios, Gestión Ambiental y <br> Análisis de Datos 📊 🌱
             </h3>
         </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    
+    
+
 
 with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
