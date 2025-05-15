@@ -9,6 +9,20 @@ from urllib.parse import quote
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
+st.markdown("""
+    <script>
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+        window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mobile', value: true }, '*');
+    } else {
+        window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mobile', value: false }, '*');
+    }
+    </script>
+""", unsafe_allow_html=True)
+
+if 'mobile' not in st.session_state:
+    st.session_state.mobile = False  # fallback
+
 def imagen_base64(ruta):
     with open(ruta, "rb") as img_file:
         b64 = base64.b64encode(img_file.read()).decode()
@@ -21,6 +35,7 @@ if 'mode' not in st.session_state:
 # Línea superior con logo + descripción a la izquierda y sol/luna a la derecha
 
 top_col1, top_col2 = st.columns([6, 1])
+
 
 with top_col1:
     logo = imagen_base64("Imagenes/logo.png")
