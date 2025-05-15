@@ -6,13 +6,19 @@ import urllib.parse
 import requests
 from urllib.parse import quote
 
+import streamlit as st
+import base64
+import urllib.parse
+import requests
+from urllib.parse import quote
+
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
+# Estilos personalizados
 st.markdown("""
 <style>
 @media (max-width: 768px) {
-    /* Ajustar flex container principal del logo y título (ya tienes) */
     div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] {
         flex-direction: column !important;
         justify-content: center !important;
@@ -32,53 +38,33 @@ st.markdown("""
         margin-top: 10px !important;
     }
 
-    /* ---------------- Botones sol/luna ---------------- */
-    /* Contenedor de los botones sol y luna: hacerlos en fila centrada con separación y tamaño adecuado */
-    /* Usamos los selectores de los botones de Streamlit */
-    .stButton > button {
-        font-size: 18px !important; /* un poco más grande para móviles */
-        padding: 10px 14px !important;
-        min-width: 60px !important; /* ancho mínimo para que no se achiquen mucho */
-        margin: 5px 5px 5px 0 !important;
-        border-radius: 8px !important;
-    }
-
-    /* Contenedor que tiene a los botones (col_sol, col_luna) - hacemos que queden en fila y centrados */
-    div[data-testid="column"] > div > button:has-text("☀️"), 
-    div[data-testid="column"] > div > button:has-text("🌙") {
-        /* No siempre funciona has-text en CSS, así que mejor aplicar a todos botones dentro top_col2 */
-    }
-
-    /* Mejor opción: ajustamos la columna donde están sol y luna (top_col2) */
-    /* Usando style para el top_col2 que es st.columns([6,1]) el último ocupa poco */
-    /* Como workaround, usar flexbox para el contenedor que tiene esos botones */
-    /* Así que añadir estilo para ese div */
-    /* Pero con streamlit no es sencillo seleccionar divs sin clases personalizadas */
-
-    /* Alternativa: aplicar a todos botones del top_col2 un estilo */
-    /* O crear un div personalizado dentro top_col2 y aplicar estilo */
-
-    /* ---------------- Botones de navegación ---------------- */
-    /* Para los botones Servicios, Proyectos, Contacto (los que están en columnas nav1, nav2, nav3) */
-    /* Ajustamos tamaño y que se ubiquen verticalmente en móviles */
-
-    /* Hacer que las columnas se apilen verticalmente en móviles */
-    .css-1lcbmhc.e1fqkh3o3 { /* clase automática de st.columns, puede cambiar */
+    /* Asegurar botones de navegación apilados verticalmente */
+    .css-1lcbmhc.e1fqkh3o3 {
         flex-direction: column !important;
         align-items: center !important;
     }
-    /* Como clase puede cambiar, mejor envolvemos los botones en un div con clase propia (si lo puedes modificar) */
 
-    /* Para un selector más estable, ajustamos los botones en general */
+    /* Botones estilo móvil */
     .stButton > button {
-        width: 100% !important;
-        margin-bottom: 8px !important;
+        font-size: 18px !important;
+        padding: 10px 14px !important;
+        min-width: 60px !important;
+        margin: 5px 5px 5px 0 !important;
+        border-radius: 8px !important;
+        width: auto !important;
+    }
+
+    /* Forzar alineación a la derecha del contenedor de botones */
+    #modo-switch {
+        text-align: right !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 </style>
 """, unsafe_allow_html=True)
 
-
+# Script para detectar móvil
 st.markdown("""
     <script>
     const mediaQuery = window.matchMedia('(max-width: 768px)');
@@ -93,16 +79,17 @@ st.markdown("""
 if 'mobile' not in st.session_state:
     st.session_state.mobile = False  # fallback
 
+# Función para imagen en base64
 def imagen_base64(ruta):
     with open(ruta, "rb") as img_file:
         b64 = base64.b64encode(img_file.read()).decode()
     return f"data:image/png;base64,{b64}"
 
-# Modo Día/Noche (debe inicializarse primero)
+# Inicialización del modo
 if 'mode' not in st.session_state:
     st.session_state.mode = "Modo Día"
 
-# Línea superior con logo + descripción a la izquierda y sol/luna a la derecha
+# Línea superior con logo + descripción + botones
 top_col1, top_col2 = st.columns([6, 1])
 
 with top_col1:
@@ -120,6 +107,8 @@ with top_col1:
     """, unsafe_allow_html=True)
 
 with top_col2:
+    # Encapsular los botones en un div con ID para CSS específico
+    st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
     col_sol, col_luna = st.columns(2)
     with col_sol:
         if st.button("☀️"):
@@ -127,8 +116,9 @@ with top_col2:
     with col_luna:
         if st.button("🌙"):
             st.session_state.mode = "Modo Noche"
+    st.markdown('</div>', unsafe_allow_html=True)
 
-# Cambiar estilos según el modo
+# Estilos por modo
 if st.session_state.mode == "Modo Noche":
     fondo = imagen_base64("Imagenes/Campo nocturno bajo la luna llena.png")
     st.markdown(f"""
@@ -150,10 +140,6 @@ if st.session_state.mode == "Modo Noche":
             border: 1px solid #FFFFFF;
             font-weight: bold !important;
         }}
-
-        .stImage {{
-            border: none !important;
-        }}
         </style>
     """, unsafe_allow_html=True)
 else:
@@ -171,7 +157,6 @@ else:
         .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #000000 !important;
         }}
-
         .stButton>button {{
             background-color: #4CAF50;
             color: white;
@@ -179,12 +164,8 @@ else:
             font-weight: bold !important;
             font-size: 15px !important;
         }}
-        .stImage {{
-            border: 2px solid #00000000;
-        }}
         </style>
     """, unsafe_allow_html=True)
-
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
