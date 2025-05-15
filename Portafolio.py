@@ -7,7 +7,7 @@ import requests
 from urllib.parse import quote
 
 # Configuración de la página
-st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="centered")
+st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
 def imagen_base64(ruta):
     with open(ruta, "rb") as img_file:
