@@ -6,11 +6,78 @@ import urllib.parse
 import requests
 from urllib.parse import quote
 
-import streamlit as st
-import base64
-
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
+
+st.markdown("""
+<style>
+@media (max-width: 768px) {
+    /* Ajustar flex container principal del logo y título (ya tienes) */
+    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] > img {
+        width: 100px !important;
+        height: 100px !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    div[style*="text-align: left;"] h3 {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin-right: 0 !important;
+        margin-top: 10px !important;
+    }
+
+    /* ---------------- Botones sol/luna ---------------- */
+    /* Contenedor de los botones sol y luna: hacerlos en fila centrada con separación y tamaño adecuado */
+    /* Usamos los selectores de los botones de Streamlit */
+    .stButton > button {
+        font-size: 18px !important; /* un poco más grande para móviles */
+        padding: 10px 14px !important;
+        min-width: 60px !important; /* ancho mínimo para que no se achiquen mucho */
+        margin: 5px 5px 5px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Contenedor que tiene a los botones (col_sol, col_luna) - hacemos que queden en fila y centrados */
+    div[data-testid="column"] > div > button:has-text("☀️"), 
+    div[data-testid="column"] > div > button:has-text("🌙") {
+        /* No siempre funciona has-text en CSS, así que mejor aplicar a todos botones dentro top_col2 */
+    }
+
+    /* Mejor opción: ajustamos la columna donde están sol y luna (top_col2) */
+    /* Usando style para el top_col2 que es st.columns([6,1]) el último ocupa poco */
+    /* Como workaround, usar flexbox para el contenedor que tiene esos botones */
+    /* Así que añadir estilo para ese div */
+    /* Pero con streamlit no es sencillo seleccionar divs sin clases personalizadas */
+
+    /* Alternativa: aplicar a todos botones del top_col2 un estilo */
+    /* O crear un div personalizado dentro top_col2 y aplicar estilo */
+
+    /* ---------------- Botones de navegación ---------------- */
+    /* Para los botones Servicios, Proyectos, Contacto (los que están en columnas nav1, nav2, nav3) */
+    /* Ajustamos tamaño y que se ubiquen verticalmente en móviles */
+
+    /* Hacer que las columnas se apilen verticalmente en móviles */
+    .css-1lcbmhc.e1fqkh3o3 { /* clase automática de st.columns, puede cambiar */
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    /* Como clase puede cambiar, mejor envolvemos los botones en un div con clase propia (si lo puedes modificar) */
+
+    /* Para un selector más estable, ajustamos los botones en general */
+    .stButton > button {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 st.markdown("""
     <script>
@@ -117,36 +184,6 @@ else:
         }}
         </style>
     """, unsafe_allow_html=True)
-
-# --- Aquí el CSS para hacer responsive SIN CAMBIAR ESTRUCTURA NI ESTILOS ORIGINALES ---
-st.markdown("""
-<style>
-@media (max-width: 768px) {
-    /* Cambiar flex-direction a columna y centrar */
-    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] {
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-    /* Ajustar tamaño y margen de la imagen logo */
-    div[style*="display: flex; justify-content: center; align-items: center; width: 100%;"] > img {
-        width: 100px !important;
-        height: 100px !important;
-        margin-right: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 10px !important;
-    }
-    /* Ajustar título para centrado y márgenes */
-    div[style*="text-align: left;"] h3 {
-        font-size: 22px !important;
-        text-align: center !important;
-        margin-right: 0 !important;
-        margin-top: 10px !important;
-    }
-}
-</style>
-""", unsafe_allow_html=True)
-
 
 
 # Columnas para navegación centrada
