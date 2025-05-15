@@ -6,6 +6,9 @@ import urllib.parse
 import requests
 from urllib.parse import quote
 
+import streamlit as st
+import base64
+
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
 
@@ -36,22 +39,19 @@ if 'mode' not in st.session_state:
 
 top_col1, top_col2 = st.columns([6, 1])
 
-
 with top_col1:
     logo = imagen_base64("Imagenes/logo.png")
     st.markdown(
     f"""
     <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-        <img src="{logo}" style="width: 155px; height: 155px;; object-fit: contain; border-radius: 15px; margin-right: -35px;margin-top: 5px;">
+        <img src="{logo}" style="width: 155px; height: 155px; object-fit: contain; border-radius: 15px; margin-right: -35px; margin-top: 5px;">
         <div style="text-align: left;">
-            <h3 style="font-size: 35px;text-align: center; margin-right:-100px;margin-top: 5px; font-weight: bold;">
+            <h3 style="font-size: 35px; text-align: center; margin-right:-100px; margin-top: 5px; font-weight: bold;">
                 Agronegocios, Gestión Ambiental y <br> Análisis de Datos 📊 🌱
             </h3>
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-
 
 with top_col2:
     col_sol, col_luna = st.columns(2)
@@ -84,7 +84,6 @@ if st.session_state.mode == "Modo Noche":
             border: 1px solid #FFFFFF;
             font-weight: bold !important;
         }}
-
         .stImage {{
             border: none !important;
         }}
@@ -105,7 +104,6 @@ else:
         .stMarkdown, .stText, .stTitle, .stHeader, .stSubheader, .stCaption, .stCode {{
             color: #000000 !important;
         }}
-
         .stButton>button {{
             background-color: #4CAF50;
             color: white;
@@ -118,6 +116,7 @@ else:
         }}
         </style>
     """, unsafe_allow_html=True)
+
 
 
 # Columnas para navegación centrada
