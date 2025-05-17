@@ -32,7 +32,7 @@ st.markdown("""
 }
 
 .titulo-texto h3 {
-    font-size: 35px;
+    font-size: 40px;
     text-align: center;
     margin-right: -100px;
     margin-top: 5px;
@@ -124,7 +124,7 @@ with top_col1:
         <img src="{logo}" class="logo">
         <div class="titulo-texto">
             <h3>
-                Agronegocios, Gestión Ambiental y <br> Análisis de Datos 📊 🌱
+                Consultora Agroambiental 📊 🌱
             </h3>
         </div>
     </div>
@@ -132,19 +132,17 @@ with top_col1:
     
     
     
-
-
-with top_col2:
+    with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
-    st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
-    col_sol, col_luna = st.columns(2)
-    with col_sol:
-        if st.button("☀️"):
-            st.session_state.mode = "Modo Día"
-    with col_luna:
-        if st.button("🌙"):
-            st.session_state.mode = "Modo Noche"
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
+        col_sol, col_luna = st.columns(2)
+        with col_sol:
+            if st.button("☀️"):
+                st.session_state.mode = "Modo Día"
+        with col_luna:
+            if st.button("🌙"):
+                st.session_state.mode = "Modo Noche"
+        st.markdown('</div>', unsafe_allow_html=True)
 
 # Estilos por modo
 if st.session_state.mode == "Modo Noche":
@@ -197,22 +195,29 @@ else:
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
-espacio_izquierda, nav1, nav2, nav3, espacio_derecha = st.columns([2.2, 0.7, 0.72, 0.7, 2.2])
+espacio_izquierda, nav1, nav2, nav3, nav4, nav5, espacio_derecha = st.columns([2.2, 0.7, 0.72, 0.7,0.7,0.7, 2.2])
 
 with nav1:
     if st.button("Servicios"):
         st.session_state.seccion = "Servicios"
-
+           
 with nav2:
     if st.button("Proyectos"):
         st.session_state.seccion = "Proyectos"
-
+        
 with nav3:
+    if st.button("Cursos"):
+        st.session_state.seccion = "Cursos"
+        
+with nav4:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
 
+with nav5:
+    if st.button("Blog"):
+        st.session_state.seccion = "Blog"    
+
         
- 
 # Inicializar sección si no está definida
 if 'seccion' not in st.session_state:
     st.session_state.seccion = "Servicios"
@@ -413,8 +418,56 @@ elif st.session_state.seccion == "Proyectos":
 </div>
     </div>
     """, unsafe_allow_html=True)
-    
-#---------------------------------
+
+#------------------------
+# SECCIÓN CURSOS
+
+if st.session_state.seccion == "Cursos":
+    st.markdown("### 🎓 Cursos")
+
+    curso1, curso2, curso3 = st.columns(3)
+
+    with curso1:
+        curso_img1 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img1, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Análisis de Datos con Python</h4>
+            <p>Aprendé a manejar datos usando pandas, matplotlib y otras herramientas esenciales para el análisis.</p>
+            <a href='https://ledesma-lara12345.hotmart.host/analisis-de-datos-aplicado-al-agronegocio-e4b986b8-40c1-4978-9e02-9d65662337fe' target='_blank'>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with curso2:
+        curso_img2 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img2, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Gestión Ambiental Estratégica</h4>
+            <p>Curso orientado a la toma de decisiones ambientales en proyectos productivos.</p>
+            <a href='https://go.hotmart.com/XXXXXXX_GESTION_AMBIENTAL' target='_blank'>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with curso3:
+        curso_img3 = imagen_base64("Imagenes/Cursos/images.jpeg")
+        st.image(curso_img3, use_container_width=True)
+        st.markdown("""
+        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
+            <h4>Economía y Agronegocios</h4>
+            <p>Conocé el funcionamiento del mercado agroindustrial, sus actores y estrategias competitivas.</p>
+            <a href='https://go.hotmart.com/XXXXXXX_AGRONEGOCIOS' target='_blank'>
+                <button style='padding:8px 12px; background-color:#4CAF50; color:white; border:none; border-radius:5px;'>Ir al curso</button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        
+        
 #------------------------
                 
 elif st.session_state.seccion == "Contacto":
@@ -429,8 +482,6 @@ elif st.session_state.seccion == "Contacto":
         </p>
         </div>
     """, unsafe_allow_html=True)
-
-
     
     espacio1, col1, col2, col3, col4, espacio2 = st.columns([0.2, 0.8, 0.7, 0.67, 0.56, 0.1])
 
@@ -497,3 +548,41 @@ elif st.session_state.seccion == "Contacto":
             ''',
             unsafe_allow_html=True
         )
+    
+  
+# BLOG -----------------
+
+fastapi_url = "http://127.0.0.1:8000"
+
+if "mostrar_articulo" not in st.session_state:
+    st.session_state.mostrar_articulo = False
+
+elif st.session_state.seccion == "Blog":
+    st.markdown("### ✍️ Artículos: ")
+
+    # Diccionario de títulos legibles y sus rutas/títulos codificados
+    opciones = {
+        "Cómo hacer un Plan de Negocio paso a paso": "plan_negocio",
+        "Cómo usar el análisis de datos para tomar mejores decisiones en el agro": "articulo2",
+        "¿Evaluar un proyecto de inversión agropecuaria: lo que necesitás saber antes de dar el paso": "articulo3"
+    }
+
+    articulo_legible = st.selectbox("📚 Seleccioná un artículo:", list(opciones.keys()))
+
+    if st.button("📖 Ver artículo"):
+        st.session_state.mostrar_articulo = True
+
+    if st.session_state.mostrar_articulo:
+        titulo_codificado = quote(opciones[articulo_legible])
+        response = requests.get(f"{fastapi_url}/get_article?title={titulo_codificado}")
+        
+        if response.status_code == 200:
+            imagenes = response.json()["imagenes"]
+            for img_b64 in imagenes:
+                st.image(f"data:image/jpeg;base64,{img_b64}")
+        else:
+            st.error("No se pudo cargar el artículo.")  
+
+
+    
+    
