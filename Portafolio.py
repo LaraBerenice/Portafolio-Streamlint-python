@@ -260,7 +260,7 @@ if 'seccion' not in st.session_state:
 
 # CONTENIDO DE CADA SECCIÓN
 if st.session_state.seccion == "Servicios":
-    st.markdown("### 💼 Servicios")
+    st.markdown("### 💼 Ver algunos ")
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         Servicio_1 = imagen_base64("Imagenes/Servicios/planNegocio.jpeg")
@@ -332,7 +332,7 @@ if st.session_state.seccion == "Servicios":
 # SECCIÓN PROYECTOS
 
 elif st.session_state.seccion == "Proyectos":    
-    st.markdown("### 🚀 Proyectos")
+    st.markdown("### 🚀 Proyectos Públicos")
     col6, col7, col8, col9, col10, col11 = st.columns(6)
     
     with col6:
@@ -473,7 +473,7 @@ elif st.session_state.seccion == "Contacto":
         <h3 style="font-size: 28px;">📞 Contacto</h3>
         <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 17px; padding: 10px; border-radius: 10px;">
         <strong>¿Tienes alguna consulta o te gustaría conocerme mejor?</strong> <br>
-        Puedes contactarme por <strong>WhatsApp</strong>, <strong>correo electrónico</strong> o a través de <strong>LinkedIn</strong>. 
+        Puedes contactarme por <strong>WhatsApp</strong>, <strong>correo electrónico</strong> o a través de mi <strong>LinkedIn</strong>. 
         También puedes explorar mis proyectos públicos en <strong>GitHub</strong>.<br>
         Encuentra todos los enlaces aquí:
         </p>
