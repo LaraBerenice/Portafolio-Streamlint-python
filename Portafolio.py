@@ -237,7 +237,7 @@ else:
 
 # Columnas para navegación centrada
 # Crear espacio en blanco a los costados para centrar los botones
-espacio_izquierda, nav1, nav2, nav3, nav4, nav5, espacio_derecha = st.columns([2.2, 0.7, 0.72, 0.59,0.7,0.7, 2.2])
+espacio_izquierda, nav1, nav2, nav3, espacio_derecha = st.columns([2.2, 0.7, 0.72, 0.59, 2.2])
 
 with nav1:
     if st.button("Servicios"):
@@ -247,17 +247,11 @@ with nav2:
     if st.button("Proyectos"):
         st.session_state.seccion = "Proyectos"
         
-with nav3:
-    if st.button("Cursos"):
-        st.session_state.seccion = "Cursos"
         
-with nav4:
+with nav3:
     if st.button("Contacto"):
         st.session_state.seccion = "Contacto"
-
-with nav5:
-    if st.button("Blog"):
-        st.session_state.seccion = "Blog"    
+ 
 
         
 # Inicializar sección si no está definida
@@ -470,193 +464,6 @@ elif st.session_state.seccion == "Proyectos":
 
 # SECCIÓN CURSOS
 
-if st.session_state.seccion == "Cursos":
-    
-    modo_actual = "modo-noche" if st.session_state.mode == "Modo Noche" else "modo-dia"
-    
-    st.markdown("### 🎓 Cursos")
-# Bloque principal con HTML y estilos personalizados
-
-    html_content = """
-<div class="profesora-info" style="color: #E0E0E0; font-family: Arial, sans-serif; line-height: 1.5;">
-  <h2 style="color: #E8F5E9; margin-bottom: 25px; text-align: center;">
-    🌿 Capacitaciones especializadas en ambiente, agro y herramientas transversales
-  </h2>
-  <hr style="border: 0; border-top: 2px solid #E0E0E0; margin: 15px 0;">
-  <p><strong>📜  Marco Legal de los Certificados: </strong></p>
-  <ul style="margin-left: 20px; list-style: none; padding-left: 0;">
-    <li style="display: inline-flex; align-items: center; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
-      <span>⭐</span>
-      <span style="color: #E0E0E0;">Ley 25.675 – Ley General del Ambiente</span>
-    </li>
-    <li style="display: inline-flex; align-items: center; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
-      <span>⭐</span>
-      <span style="color: #E0E0E0;">Ley 27.592 – Ley Yolanda</span>
-    </li>
-    <li style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
-      <span>⭐</span>
-      <span style="color: #E0E0E0;">Ley 27.621 – Ley de Educación Ambiental Integral</span>
-    </li>
-    <li style="display:  inline-flex; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
-      <span>⭐</span>
-      <span style="color: #E0E0E0;"> Emitido por profesional reconocido por el
-      Ministerio de Cultura y Educación de República Argentina y con MP en el Consejo
-      de Profesionales Bioagroindustriales de la Repúbica Argentina.</span>
-    </li>
-  </ul>
-  <hr style="border: 0; border-top: 2px solid #E0E0E0; margin: 15px 0;">
-
-
-<ul style="color: #E0E0E0; font-family: Arial, sans-serif; line-height: 1.6; margin-top: 25px; padding-left: 0; text-align: left;">
-  </li>
-  <li style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 18px; color: #81C784;">
-    <span>☄️ </span>
-    <span style="color: #E0E0E0;">Se imparten a través de la plataforma Hotmart, con certificado oficial al finalizar.</span>
-  </li>
-  <li style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 18px; color: #81C784;">
-    <span>☄️ </span>
-    <span style="color: #E0E0E0;">Los módulos son descargables para estudiar a tu propio ritmo, con total flexibilidad.</span>
-  </li>
-  <li style="display: inline-flex; align-items: center; gap: 6px; font-size: 18px; color: #81C784;">
-    <span>☄️ </span>
-    <span style="color: #E0E0E0;">Además, cuentas con asesoría personalizada durante todo el curso.</span>
-  </li>
-</ul>
-
-</div>
-
-"""
-
-    st.markdown(html_content, unsafe_allow_html=True)
-
-
-
-
-
-
-    
-
- #Presentación de cursos con estrategia de marketing (descuentos limitados y prueba social)
-    st.markdown("## 🎓 Cursos Disponibles")
-
-    curso1, curso2, curso3 = st.columns(3)
-
-    with curso1:
-        st.image("https://img.freepik.com/vector-gratis/ecologia-estilo-vida-ecologico-personas-protegiendo-planeta_1150-39773.jpg", use_column_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Estadística para el Análisis de Datos</h4>
-            <p>Curso asincrónico con materiales descargables y marco legal completo según Ley Yolanda y Ley General del Ambiente.</p>
-            <p><strong>ARS 12.000 / USD 49</strong></p>
-            <h5 style='color: red;'>¡Accede al material exclusivo con tu inscripción!</h5>
-            <p><strong>📌 Modalidad virtual – Plataforma Hotmart</strong></p>
-            <p style='font-style: italic; color: #555;'>“Excelente curso, muy completo y claro. Lo recomiendo.” – Ana G.</p>
-            <a href='https://go.hotmart.com/EJEMPLO1' target='_blank'>
-                <button style='padding:8px 12px; background-color:#388E3C; color:white; border:none; border-radius:5px;'>¡Inscribirme ahora!</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with curso2:
-        st.image("https://img.freepik.com/vector-gratis/gestion-residuos-ilustrado-contenedores_23-2148501732.jpg", use_column_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Gestión de Residuos y Economía Circular</h4>
-            <p>Capacitación técnica sobre clasificación, legislación vigente y estrategias de minimización en la industria y municipios.</p>
-            <p><strong>ARS 14.000 / USD 59</strong></p>
-            <h5 style='color: red;'>¡Accede al material exclusivo con tu inscripción!</h5>
-            <p><strong>📌 Modalidad virtual – Plataforma Hotmart</strong></p>
-            <p style='font-style: italic; color: #555;'>“Muy útil para mi trabajo en la municipalidad. Me encantó el enfoque práctico.” – Carlos D.</p>
-            <a href='https://go.hotmart.com/EJEMPLO2' target='_blank'>
-                <button style='padding:8px 12px; background-color:#388E3C; color:white; border:none; border-radius:5px;'>¡Inscribirme ahora!</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with curso3:
-        st.image("https://img.freepik.com/vector-gratis/personas-protegiendo-planeta_23-2148510019.jpg", use_column_width=True)
-        st.markdown("""
-        <div style='background-color: rgba(255, 255, 255, 0.5); padding: 5px; border-radius: 10px;'>
-            <h4>Ley Yolanda para Funcionarios Públicos</h4>
-            <p>Capacitación obligatoria en educación ambiental con enfoque legal, social y técnico. Cumplí con la normativa vigente.</p>
-            <p><strong>ARS 10.000 / USD 39</strong></p>
-            <h5 style='color: red;'>¡Accede al material exclusivo con tu inscripción!</h5>
-            <p><strong>📌 Modalidad virtual – Plataforma Hotmart</strong></p>
-            <p style='font-style: italic; color: #555;'>“Fácil de seguir, con buena explicación legal. Ideal para funcionarios.” – Laura M.</p>
-            <a href='https://go.hotmart.com/EJEMPLO3' target='_blank'>
-                <button style='padding:8px 12px; background-color:#388E3C; color:white; border:none; border-radius:5px;'>¡Inscribirme ahora!</button>
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
-
-
-    st.markdown("## 📬 ¿Te gustaría más información o recibir ofertas exclusivas?")
-
-    # Formulario de contacto
-
-    def es_correo_valido(correo):
-        patron = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-        return re.match(patron, correo) is not None
-
-    with st.form(key="formulario_contacto"):
-        nombre = st.text_input("Nombre completo")
-        correo = st.text_input("Correo electrónico")
-        mensaje = st.text_area("Tu consulta o mensaje")
-        acepto_marketing = st.checkbox("Acepto recibir correos electrónicos con novedades y ofertas.")
-        
-        enviar = st.form_submit_button(label="Enviar mensaje")
-
-        if enviar:
-            if not es_correo_valido(correo):
-                st.warning("⚠️ Ingresá un correo electrónico válido.")
-            elif not acepto_marketing:
-                st.warning("⚠️ Para continuar, debes aceptar recibir correos electrónicos.")
-            elif not nombre or not correo or not mensaje:
-                st.warning("⚠️ Por favor completá todos los campos.")
-            else:
-                # Crear registro de datos
-                nuevo_registro = {
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "nombre": nombre,
-                    "correo": correo,
-                    "mensaje": mensaje
-                }
-
-                # Guardar en archivo CSV
-                archivo_csv = "leads_marketing.csv"
-                if os.path.exists(archivo_csv):
-                    df = pd.read_csv(archivo_csv)
-                    df = pd.concat([df, pd.DataFrame([nuevo_registro])], ignore_index=True)
-                else:
-                    df = pd.DataFrame([nuevo_registro])
-
-                df.to_csv(archivo_csv, index=False)
-                st.success("✅ ¡Gracias! Hemos recibido tu mensaje y pronto te contactaremos.")
-                
-    # Luego el público objetivo con Markdown puro (para mejor soporte)
-    st.markdown("""
-    <div style='background-color: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 10px;'>
-    <h2>👥 ¿A quiénes están dirigidos?</h2>
-
-    <ul>
-      <li>Estudiantes de carreras afines</li>
-      <li>Docentes de todos los niveles</li>
-      <li>Profesionales de la educación</li>
-      <li>Funcionarios/as públicos/as (Ley Yolanda)</li>
-      <li>Técnicos y profesionales en gestión ambiental</li>
-      <li>Empresas y municipios en transición hacia la sostenibilidad</li>
-      <li>Público en general interesado en las temáticas</li>
-    </ul>
-    </div>
-    """, unsafe_allow_html=True)
-    
-
-    # 📲 Botón flotante de WhatsApp
-    st.markdown("""
-        <a href='https://wa.me/+5493704003126' target='_blank'>
-            <img src="https://img.lovepik.com/png/20231104/whatsapp-phone-icon-logo-whatsapp-digital-green_494222_wh860.png" alt="WhatsApp" width="60" height="60" style="position: fixed; bottom: 30px; right: 30px; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.2);"/>
-        </a>
-    """, unsafe_allow_html=True)
    
 #------------------------
                 
@@ -741,54 +548,3 @@ elif st.session_state.seccion == "Contacto":
     
   
 # BLOG -----------------
-
-fastapi_url = "http://127.0.0.1:8000"
-
-if "mostrar_articulo" not in st.session_state:
-    st.session_state.mostrar_articulo = False
-
-elif st.session_state.seccion == "Blog":
-    st.markdown('''
-        <p style="background-color: rgba(255, 255, 255, 0.4); font-size: 17px; padding: 10px; border-radius: 10px;">
-            ✍️ <strong>seleccioná un artículo:</strong>
-        </p>
-        ''', unsafe_allow_html=True)
-
-    # Diccionario de títulos legibles y sus rutas/títulos codificados
-    opciones = {
-        "Cómo hacer un Plan de Negocio paso a paso": "plan_negocio",
-        "Cómo usar el análisis de datos para tomar mejores decisiones en el agro": "articulo2",
-        "¿Evaluar un proyecto de inversión agropecuaria: lo que necesitás saber antes de dar el paso": "articulo3"
-    }
-
-    articulo_legible = st.selectbox(
-    "📚\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003"
-    "\u2003✨\u2003📖\u2003✨\u2003📖\u2003✨\u2003"
-    "\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖"
-    "\u2003\u2003📚\u2003📖\u2003📚\u2003📖\u2003📚\u2003📚\u2003📖\u2003📚\u2003📖\u2003📚\u2003📚",
-    list(opciones.keys())
-)
-
-
-
-
-
-    
-    if st.button("📖 Ver artículo"):
-        st.session_state.mostrar_articulo = True
-    
-
-    if st.session_state.mostrar_articulo:
-        titulo_codificado = quote(opciones[articulo_legible])
-        response = requests.get(f"{fastapi_url}/get_article?title={titulo_codificado}")
-        
-        if response.status_code == 200:
-            imagenes = response.json()["imagenes"]
-            for img_b64 in imagenes:
-                st.image(f"data:image/jpeg;base64,{img_b64}")
-        else:
-            st.error("No se pudo cargar el artículo.")  
-
-
-    
-    

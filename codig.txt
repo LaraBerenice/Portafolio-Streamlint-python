@@ -1,0 +1,22 @@
+  <p><strong>📜  Marco Legal: </strong></p>
+  <ul style="margin-left: 20px; list-style: none; padding-left: 0;">
+    <li style="display: inline-flex; align-items: center; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
+      <span>⭐</span>
+      <span style="color: #E0E0E0;">Ley 25.675 – Ley General del Ambiente</span>
+    </li>
+    <li style="display: inline-flex; align-items: center; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
+      <span>⭐</span>
+      <span style="color: #E0E0E0;">Ley 27.592 – Ley Yolanda</span>
+    </li>
+    <li style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
+      <span>⭐</span>
+      <span style="color: #E0E0E0;">Ley 27.621 – Ley de Educación Ambiental Integral</span>
+    </li>
+    <li style="display:  inline-flex; margin-bottom: 8px; color: #FFEB3B; font-size: 18px;">
+      <span>⭐</span>
+      <span style="color: #E0E0E0;"> Profesional reconocido por el
+      Ministerio de Cultura y Educación de República Argentina y con MP en el Consejo
+      de Profesionales Bioagroindustriales de la Repúbica Argentina.</span>
+    </li>
+  </ul>
+  <hr style="border: 0; border-top: 2px solid #E0E0E0; margin: 15px 0;">
