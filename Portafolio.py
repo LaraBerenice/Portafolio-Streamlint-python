@@ -62,7 +62,7 @@ div.tarjeta {
     display: flex;
     align-items: center;
     justify-content: flex-start;  /* ← izquierda */
-    gap: 15px; /* mejor que margin-right */
+    gap: 10px; /* mejor que margin-right */
     width: 100%;
     margin-left: 0;
 }
