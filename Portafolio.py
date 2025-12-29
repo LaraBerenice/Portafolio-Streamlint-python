@@ -62,7 +62,7 @@ div.tarjeta {
     display: flex;
     align-items: center;
     justify-content: flex-start;  /* ← izquierda */
-    gap: 10px; /* mejor que margin-right */
+    gap: 15px; /* mejor que margin-right */
     width: 100%;
     margin-left: 0;
 }
@@ -76,7 +76,7 @@ div.tarjeta {
 }
 
 .titulo-texto {
-    max-width: 800px;
+    max-width: 950px;
 }
 
 .titulo-texto h3 {
@@ -100,7 +100,7 @@ div.tarjeta {
     }
 
     .logo {
-        width: 110px !important;
+        width: 120px !important;
         height: auto !important;
         margin: 0 auto 0 10px 32px !important; /* top, right, bottom, left */
     }
