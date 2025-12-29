@@ -69,10 +69,10 @@ div.tarjeta {
 
 .logo {
     width: 150px;
-    height: 200px;
+    height: 170px;
     object-fit: contain;
-    border-radius: 25px;
-    margin-right: 10px; /* separación normal */
+    border-radius: 20px;
+    margin-right: 0px; /* separación normal */
 }
 
 .titulo-texto {
