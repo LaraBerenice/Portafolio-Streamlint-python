@@ -76,7 +76,7 @@ div.tarjeta {
 }
 
 .titulo-texto {
-    max-width: 900px;
+    max-width: 800px;
 }
 
 .titulo-texto h3 {
