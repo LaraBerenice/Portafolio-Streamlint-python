@@ -10,7 +10,7 @@ import os
 import re
 
 # Configuración de la página
-st.set_page_config(page_title="Análisis de Datos, Agronegocios y Gestión Ambiental", layout="wide")
+st.set_page_config(page_title="Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible", layout="wide")
 
 # Estilos personalizados
 st.markdown("""
