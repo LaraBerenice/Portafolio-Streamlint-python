@@ -62,6 +62,7 @@ div.tarjeta {
     display: flex;
     align-items: center;
     justify-content: flex-start;  /* ← izquierda */
+    gap: 15px; /* mejor que margin-right */
     width: 100%;
     margin-left: 0;
 }
@@ -72,6 +73,10 @@ div.tarjeta {
     object-fit: contain;
     border-radius: 25px;
     margin-right: 10px; /* separación normal */
+}
+
+.titulo-texto {
+    max-width: 900px;
 }
 
 .titulo-texto h3 {
@@ -86,23 +91,33 @@ div.tarjeta {
 @media (max-width: 768px) {
     .titulo-contenedor {
         flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
         margin: 0 !important;
         padding: 0 !important;
+        text-align: center;
+        gap: 10px;
     }
 
     .logo {
-        width: 100px !important;
-        height: 100px !important;
-        margin: 0 0 10px 32px !important; /* top, right, bottom, left */
+        width: 110px !important;
+        height: auto !important;
+        margin: 0 auto 0 10px 32px !important; /* top, right, bottom, left */
+    }
+    
+    .titulo-texto {
+        width: 100%;
+        padding: 0 10px;
     }
 
     .titulo-texto h3 {
         font-size: 22px !important;
         text-align: center !important;
-        margin: 0 auto 0 32px !important; /* top, right, bottom, left */  
+        margin: 0 auto 0 32px !important; /* top, right, bottom, left */
+        
     }
 
-    /* Botones en columna */
+    /* Botones en columna */ 
     .css-1lcbmhc.e1fqkh3o3 {
         flex-direction: column !important;
         align-items: center !important;
@@ -162,14 +177,19 @@ with top_col1:
     
     st.markdown(f"""
     <div class="header-container">
-        <img src="data:{logo}"class="logo">
+        <img src="{logo}" class="logo">
         <div class="titulo-texto">
             <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
-            <p> ESG, cumplimiento normativo ambiental, gestión de riesgos ambientales, regulatorios y
-            otimización del desempeño ambiental en proyectos e industrias.</p>
+            <p>
+                ESG, cumplimiento normativo ambiental, gestión de riesgos ambientales,
+                regulatorios y optimización del desempeño ambiental en proyectos e industrias.
+            </p>
         </div>
     </div>
     """.format(logo), unsafe_allow_html=True)
+    
+    
+    
     
 
     
