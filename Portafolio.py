@@ -137,8 +137,8 @@ div.tarjeta {
 
     #modo-switch {
         text-align: right !important;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     
 }
