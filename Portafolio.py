@@ -93,7 +93,7 @@ div.tarjeta {
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: flex-start!important;
-        margin: -10 !important;
+        margin: 0 !important;
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
         gap: 8px;
@@ -137,8 +137,8 @@ div.tarjeta {
 
     #modo-switch {
         text-align: right !important;
-        margin-top: 0px;
-        margin-bottom: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
 }
