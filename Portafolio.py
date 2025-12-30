@@ -28,7 +28,7 @@ st.markdown("""
 div.tarjeta {
     background-color:rgba(204, 232, 198, 0.6);
     padding: 25px;
-    margin-top: 20px;
+    margin-top: -14px;
     border-radius: 18px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
