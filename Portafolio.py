@@ -94,9 +94,10 @@ div.tarjeta {
         justify-content: flex-start !important;
         align-items: flex-start!important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
-        gap: 10px;
+        gap: 8px;
+        width: 100%;
     }
 
     .logo {
@@ -106,16 +107,16 @@ div.tarjeta {
     }
     
     .titulo-texto {
+        margin: 0 !important;
+        padding: 0 !important;
         text-align: left !important;
-        margin-left: 20px !important;
-        margin-right: 10px !important;
+        width: 100%;
     }
 
     .titulo-texto h3 {
         font-size: 22px !important;
         text-align: left !important;   /* ← clave */
-        margin-left: 20px !important;  /* ajustá este valor */
-        margin-right: 10px !important;
+        margin: 0 0 6px 0 !important;
         
     }
 
@@ -191,9 +192,6 @@ with top_col1:
     """.format(logo), unsafe_allow_html=True)
     
     
-    
-    
-
     
     with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
