@@ -114,7 +114,7 @@ div.tarjeta {
         font-size: 22px !important;
         text-align: center !important;
         margin: 0 auto 0 32px !important; /* top, right, bottom, left */
-        margin-left: 16px;  /* más a la izquierda */
+        margin-left: 0px;  /* más a la izquierda */
         margin-left: 24px;  /* más centrado */
         
     }
