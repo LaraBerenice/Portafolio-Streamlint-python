@@ -91,11 +91,11 @@ div.tarjeta {
 @media (max-width: 768px) {
     .titulo-contenedor {
         flex-direction: column !important;
-        justify-content: left !important;
-        align-items: left !important;
+        justify-content: flex-start !important;
+        align-items: flex-start!important;
         margin: 0 !important;
         padding: 0 !important;
-        text-align: center;
+        text-align: left;
         gap: 10px;
     }
 
@@ -112,7 +112,7 @@ div.tarjeta {
     }
 
     .titulo-texto h3 {
-         font-size: 22px !important;
+        font-size: 22px !important;
         text-align: left !important;   /* ← clave */
         margin-left: 20px !important;  /* ajustá este valor */
         margin-right: 10px !important;
