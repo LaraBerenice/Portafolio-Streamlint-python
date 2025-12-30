@@ -106,16 +106,16 @@ div.tarjeta {
     }
     
     .titulo-texto {
-        width: 100%;
-        padding: 0 10px;
+        text-align: left !important;
+        margin-left: 20px !important;
+        margin-right: 10px !important;
     }
 
     .titulo-texto h3 {
-        font-size: 22px !important;
-        text-align: center !important;
-        margin: 0 auto 0 32px !important; /* top, right, bottom, left */
-        margin-left: 0px;  /* más a la izquierda */
-        margin-left: 24px;  /* más centrado */
+         font-size: 22px !important;
+        text-align: left !important;   /* ← clave */
+        margin-left: 20px !important;  /* ajustá este valor */
+        margin-right: 10px !important;
         
     }
 
