@@ -103,7 +103,7 @@ div.tarjeta {
     .logo {
         width: 120px !important;
         height: auto !important;
-        margin: 0 0 10px 32px !important; /* top, right, bottom, left */
+        margin: 0 0 10px 20px !important; /* top, right, bottom, left */
     }
     
     .titulo-texto {
