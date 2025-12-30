@@ -95,7 +95,6 @@ div.tarjeta {
         align-items: center !important;
         margin: 0 !important;
         padding: 0 !important;
-        text-align: center;
         gap: 10px;
     }
 
