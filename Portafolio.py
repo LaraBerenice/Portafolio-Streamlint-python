@@ -91,7 +91,8 @@ div.tarjeta {
 @media (max-width: 768px) {
     .titulo-contenedor {
         flex-direction: column !important;
-        align-items: center !important;
+        justify-content: left !important;
+        align-items: left !important;
         margin: 0 !important;
         padding: 0 !important;
         text-align: center;
