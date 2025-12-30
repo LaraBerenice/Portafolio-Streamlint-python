@@ -102,7 +102,7 @@ div.tarjeta {
     .logo {
         width: 120px !important;
         height: auto !important;
-        margin: 0 auto 0 10px 32px !important; /* top, right, bottom, left */
+        margin: 0 0 10px 32px !important; /* top, right, bottom, left */
     }
     
     .titulo-texto {
@@ -114,6 +114,8 @@ div.tarjeta {
         font-size: 22px !important;
         text-align: center !important;
         margin: 0 auto 0 32px !important; /* top, right, bottom, left */
+        margin-left: 16px;  /* más a la izquierda */
+        margin-left: 24px;  /* más centrado */
         
     }
 
