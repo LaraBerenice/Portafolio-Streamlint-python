@@ -103,7 +103,7 @@ div.tarjeta {
     .logo {
         width: 120px !important;
         height: auto !important;
-        margin: 0 0 10px 20px !important; /* top, right, bottom, left */
+        margin: 0 0 10px 32px !important; /* top, right, bottom, left */
     }
     
     .titulo-texto {
@@ -301,37 +301,61 @@ with st.container():
             style="list-style-type: disc; padding-left: 30px;">
             
     <li><strong>Estudios de Impacto Ambiental (EIA)</strong>
-        <p>Evaluación de impactos y viabilidad ambiental de proyectos productivos,
-        energéticos, mineros y de infraestructura.</p>
+        <p>Elaboración de Estudios de Impacto Ambiental para proyectos
+        de agroindustria, minería, energía, construcción e industria,
+        orientados a evaluar impactos, garantizar el cumplimiento normativo y
+        asegurar la viabilidad ambiental de los proyectos desde su etapa inicial.</p>
     </li>
 
     <li><strong>Planes de Gestión Ambiental (PGA)</strong>
-        <p>Diseño de planes integrales con enfoque en desarrollo sostenible,
-        mejora continua y responsabilidad social.</p>
+        <p>iseño de Planes de Gestión Ambiental integrales,
+        incorporando criterios de desarrollo sostenible, mejora continua
+        y desempeño ambiental, junto con aspectos de seguridad alimentaria,
+        salud y seguridad laboral, responsabilidad social empresaria, calidad e inocuidad.</p>
     </li>
 
-    <li><strong>Auditorías Ambientales</strong>
-        <p>Auditorías de cumplimiento normativo y detección de riesgos ambientales.</p>
+    <li><strong>Auditorías Ambientales y Cumplimiento Normativo</strong>
+        <p>Ejecución de auditorías ambientales y legales para identificar desvíos,
+        riesgos y oportunidades de mejora, fortaleciendo los sistemas de gestión
+        y asegurando alineación con normativas vigentes, Buenas Prácticas Agrícolas (BPA)
+        y estándares ambientales aplicables.</p>
     </li>
 
-    <li><strong>Evaluación Socioambiental y Económica</strong>
-        <p>Análisis integral de proyectos con herramientas de valoración ambiental.</p>
+    <li><strong>Evaluación Socioambiental, Económica y Financiera de Proyectos</strong>
+        <p>Análisis integral de proyectos de inversión productivos, energéticos y
+        de infraestructura, incorporando evaluación económica, financiera y herramientas
+        de Valoración Económica Ambiental (VEA) para apoyar decisiones estratégicas
+        sostenibles.</p>
     </li>
 
-    <li><strong>Residuos, Efluentes y Energía</strong>
-        <p>Planes técnicos con enfoque en economía circular.</p>
+    <li><strong>Gestión de Residuos, Efluentes y Eficiencia Energética</strong>
+        <p>Desarrollo de planes técnicos para la gestión de residuos, tratamiento
+        de efluentes y mejora de la eficiencia energética, con enfoque en economía circular,
+        optimización de recursos y reducción de impactos ambientales.</p>
     </li>
 
     <li><strong>Datos Ambientales y Reportes ESG</strong>
-        <p>Dashboards e indicadores para reportes ambientales y de sostenibilidad.</p>
+        <p>Análisis de datos ambientales y diseño de dashboards para el monitoreo de indicadores,
+        utilizados como soporte para Reportes de Gestión Ambiental y Reportes de Sostenibilidad
+        (ESG), facilitando la toma de decisiones basada en datos.</p>
+    </li>
+    
+      <li><strong>Informes Técnicos y Periciales</strong>
+        <p>Elaboración de informes técnicos y periciales vinculados a la gestión ambiental,
+        administrativa, productiva y de infraestructura, con respaldo técnico, analítico y
+        normativo.</p>
     </li>
 
-    <li><strong>Monitoreo Ambiental</strong>
-        <p>Toma de muestras y análisis técnico ambiental.</p>
+    <li><strong>Monitoreo Ambiental y Toma de Muestras</strong>
+        <p>Realización de muestreos ambientales en entornos productivos, industriales
+        y de obra, aplicando métodos analíticos y técnicas de campo para la detección
+        y evaluación de contaminación ambiental.</p>
     </li>
 
-    <li><strong>Componente Social y ESG</strong>
-        <p>Integración de criterios sociales y sostenibles en proyectos.</p>
+    <li><strong>Integración del Componente Social y Enfoque ESG</strong>
+        <p>Incorporación del componente social en proyectos productivos, energéticos
+        y de infraestructura, integrando criterios ESG y enfoque de desarrollo sostenible
+        para fortalecer la aceptación social y la sostenibilidad a largo plazo.</p>
     </li>
     </div>
     """, unsafe_allow_html=True)
