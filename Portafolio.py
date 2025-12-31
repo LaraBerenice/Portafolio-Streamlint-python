@@ -185,9 +185,8 @@ with top_col1:
         <div class="titulo-texto">
             <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
             <p>
-                Con foco en ESG, HSE, Calidad y tambien seguridad Alimentaria (para
-                industrias Alimentarias), cumplimiento normativo ambiental, gestión
-                de riesgos ambientales, regulatorios y optimización del desempeño ambiental
+                Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
+                ambientales, regulatorios y optimización del desempeño ambiental
                 en proyectos e industrias.
             </p>
         </div>
@@ -346,21 +345,21 @@ with st.container():
     </li>
     
       <li><strong>Informes Técnicos y Periciales</strong>
-        <p>Elaboración de informes técnicos y periciales vinculados a la gestión ambiental,
-        la valoración económica ambiental en proyectos aldo y industrias con resptécnico,
-        analítico y normativ</p>
+        <p>Elaboración de informes técnicos y periciales de parte vinculados a la gestión
+        ambiental o la valoración económica ambiental técnica de proyectos o industrias.</p>
     </li>
 
     <li><strong>Monitoreo Ambiental y Toma de Muestras</strong>
         <p>Realización de muestreos ambientales en entornos productivos, industriales
-        y de obra, aplicando métodos analíticos y técnicas de campo para la detección
+        o de obras, aplicando métodos analíticos y técnicas de campo para la detección
         y evaluación de contaminación ambiental.</p>
     </li>
 
     <li><strong>Integración del Componente Social y Enfoque ESG</strong>
-        <p>Incorporación del componente social en proyectos productivos, energéticos
-        y de infraestructura, integrando criterios ESG y enfoque de desarrollo sostenible
-        para fortalecer la aceptación social y la sostenibilidad a largo plazo.</p>
+        <p>Incorporación del componente social en proyectos y actividades, integrando
+        criterios ESG y un enfoque de desarrollo sostenible, con el objetivo de fortalecer
+        la aceptación social y el impacto positivo de los mismos.
+        </p>
     </li>
     </div>
     """, unsafe_allow_html=True)
