@@ -90,6 +90,7 @@ div.tarjeta {
 /* Responsive para móvil */
 @media (max-width: 768px) {
     .titulo-contenedor {
+        display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: flex-start!important;
@@ -97,12 +98,22 @@ div.tarjeta {
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
         gap: 10px;
-        margin-top: -10px
+        margin-top: -10px;
+        width: 100%;
+    }
+    
+     /* Fila logo + título */
+    .header-container {
+        display: flex !important;
+        flex-direction: row !important;   /* 🔑 lado a lado */
+        align-items: center !important;
+        gap: 12px !important;
         width: 100%;
     }
 
+
     .logo {
-        width: 320px !important;
+        width: 110px !important;
         height: auto !important;
         margin: 0  !important;
     }
@@ -117,9 +128,16 @@ div.tarjeta {
     .titulo-texto h3 {
         font-size: 22px !important;
         text-align: left !important;   /* ← clave */
-        margin: 0 0 6px 0 !important;
+        margin: 0 !important;
         font-weight: bold;
         
+    }
+    
+    /* Texto debajo del logo + título */
+    .texto-descripcion {
+        width: 100%;
+        margin-top: 4px !important;
+        text-align: left !important;
     }
 
     /* Botones en columna */ 
@@ -139,7 +157,7 @@ div.tarjeta {
 
     #modo-switch {
         text-align: right !important;
-        margin: 5 px 0 !important;;
+        margin: 5px 0 !important;
     }
     
 }
