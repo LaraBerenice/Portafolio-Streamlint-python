@@ -165,18 +165,22 @@ div.tarjeta {
         font-size: 17px !important;
         padding: 10px 14px !important;
         min-width: 60px !important;
-        margin: 4px 0 !important;
+        margin: 0 !important;
         border-radius: 8px !important;
         width: auto !important;
     }
 
-    .modo-switch {
-       text-align: right !important;
+    #modo-switch {
+        text-align: right !important;
         margin: 5px 0 !important;
-        position: absolute !important;   /* 🔑 lo saca del flujo normal */
-        top: 10px !important;           /* distancia desde arriba */
-        right: 16px !important;         /* distancia desde la derecha */
-        z-index: 1000;                  /* para que esté encima de otros elementos */
+        display: flex !important;       /* fila */
+        flex-direction: row !important; /* uno al lado del otro */
+        gap: 8px !important;            /* espacio entre los botones */
+        justify-content: flex-end !important; /* alineados a la derecha */
+        position: absolute !important;  
+        top: 10px !important;           
+        right: 16px !important;         
+        z-index: 1000;                  
     }
     
 }
@@ -235,7 +239,7 @@ with top_col1:
  
     with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
-        st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
+        st.markdown('<div i#"modo-switch">', unsafe_allow_html=True)
         col_sol, col_luna = st.columns(2)
         with col_sol:
             if st.button("☀️"):
