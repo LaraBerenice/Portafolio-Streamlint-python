@@ -180,8 +180,18 @@ div.tarjeta {
         position: absolute !important;  
         top: 10px !important;           
         right: 16px !important;         
-        z-index: 1000;                  
+        z-index: 1000;                 
     }
+    
+    #modo-switch button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
     
 }
 </style>
@@ -237,17 +247,13 @@ with top_col1:
      </div>
     """, unsafe_allow_html=True)
  
-    with top_col2:
-    # Encapsular los botones en un div con ID para CSS específico
-        st.markdown('<div i#"modo-switch">', unsafe_allow_html=True)
-        col_sol, col_luna = st.columns(2)
-        with col_sol:
-            if st.button("☀️"):
-                st.session_state.mode = "Modo Día"
-        with col_luna:
-            if st.button("🌙"):
-                st.session_state.mode = "Modo Noche"
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("""
+        <div id="modo-switch">
+            <button onclick="window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mode', value: 'Modo Día' }, '*')">☀️</button>
+            <button onclick="window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mode', value: 'Modo Noche' }, '*')">🌙</button>
+        </div>
+        """, unsafe_allow_html=True)
+
 
 # 🎨 Estilos por modo
 if st.session_state.mode == "Modo Noche":
