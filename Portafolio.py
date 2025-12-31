@@ -156,6 +156,7 @@ div.tarjeta {
 
     /* Botones en columna */ 
     .css-1lcbmhc.e1fqkh3o3 {
+        display: flex !important;
         flex-direction: column !important;
          align-items: flex-start !important;
     }
