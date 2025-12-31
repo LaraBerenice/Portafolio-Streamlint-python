@@ -139,7 +139,7 @@ div.tarjeta {
     #modo-switch {
         text-align: right !important;
         margin-top: 5 px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
     }
     
 }
