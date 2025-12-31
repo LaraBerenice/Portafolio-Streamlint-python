@@ -77,6 +77,7 @@ div.tarjeta {
 
 .titulo-texto {
     max-width: 950px;
+    text-align: right;  /* ← derecha */ 
 }
 
 .titulo-texto h3 {
@@ -97,7 +98,7 @@ div.tarjeta {
         margin: 0 !important;
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
-        gap: 10px;
+        gap: 6px;
         margin-top: -10px;
         width: 100%;
     }
@@ -138,6 +139,13 @@ div.tarjeta {
         width: 100%;
         margin-top: 4px !important;
         text-align: left !important;
+    }
+    
+    .texto-descripcion {
+        font-size: 15px;
+        margin-top: 4px;
+        text-align: left;
+        width: 100%;
     }
 
     /* Botones en columna */ 
@@ -198,21 +206,24 @@ with top_col1:
     
     
     st.markdown(f"""
+    <div class="titulo-contenedor">
     <div class="header-container">
         <img src="{logo}" class="logo">
         <div class="titulo-texto">
-            <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
+            <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>   
+        </div>
+    </div>
+    <div class="texto-descripcion">
             <p>
                 Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
                 ambientales, regulatorios y optimización del desempeño ambiental
                 en proyectos e industrias.
             </p>
         </div>
-    </div>
+    </div> 
+    
     """.format(logo), unsafe_allow_html=True)
-    
-    
-    
+ 
     with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
         st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
