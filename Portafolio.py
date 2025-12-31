@@ -93,7 +93,7 @@ div.tarjeta {
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-        align-items: flex-start!important;
+        align-items: stretch !important; /* 🔑 NO center */
         margin: 0 !important;
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
@@ -104,6 +104,7 @@ div.tarjeta {
     
      /* Fila logo + título */
     .header-container {
+        flex-wrap: nowrap !important;   /* 🔑 nunca columna */
         display: flex !important;
         flex-direction: row !important;   /* 🔑 lado a lado */
         align-items: center !important;
@@ -116,6 +117,7 @@ div.tarjeta {
         width: 110px !important;
         height: auto !important;
         margin: 0  !important;
+        flex-shrink: 0 !important; /* 🔑 no se achica ni salta */
     }
     
     .titulo-texto {
@@ -123,6 +125,8 @@ div.tarjeta {
         padding: 0 !important;
         text-align: left !important;
         width: 100%;
+        flex: 1 1 auto !important;
+        min-width: 0 !important; /* 🔑 MUY importante en mobile */
     }
 
     .titulo-texto h3 {
