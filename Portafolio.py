@@ -158,7 +158,7 @@ div.tarjeta {
     .css-1lcbmhc.e1fqkh3o3 {
         display: flex !important;
         flex-direction: column !important;
-         align-items: flex-start !important;
+        align-items: flex-start !important;
     }
 
     .stButton > button {
