@@ -170,8 +170,8 @@ div.tarjeta {
         width: auto !important;
     }
 
-    #modo-switch {
-        text-align: right !important;
+    .modo-switch {
+       text-align: right !important;
         margin: 5px 0 !important;
         position: absolute !important;   /* 🔑 lo saca del flujo normal */
         top: 10px !important;           /* distancia desde arriba */
