@@ -235,7 +235,7 @@ with top_col1:
  
     with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
-        st.markdown('<div i#"modo-switch">', unsafe_allow_html=True)
+        st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
         col_sol, col_luna = st.columns(2)
         with col_sol:
             if st.button("☀️"):
