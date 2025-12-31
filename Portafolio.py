@@ -18,17 +18,19 @@ st.markdown("""
 /* Estilo general para escritorio */
 .titulo-contenedor {
     display: flex;
-    justify-content: center;
+    flex-direction: column;      /* 🔑 texto abajo */
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 5px;
+    margin-top:-10px;
     margin-bottom: 0;
+    gap: -5px;
 }
 
 div.tarjeta {
     background-color:rgba(204, 232, 198, 0.6);
     padding: 25px;
-    margin-top: -14px;
+    margin-top: -5px;
     border-radius: 18px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -217,11 +219,9 @@ with top_col1:
         </div>
     </div>
     <div class="texto-descripcion">
-            <p>
                 Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
                 ambientales, regulatorios y optimización del desempeño ambiental
                 en proyectos e industrias.
-            </p>
         </div>
     
      </div>
@@ -413,6 +413,7 @@ st.markdown("""
             
         </div>
     """, unsafe_allow_html=True)
+
 
     
 
