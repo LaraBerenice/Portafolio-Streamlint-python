@@ -102,7 +102,7 @@ div.tarjeta {
     }
 
     .logo {
-        width: 110px !important;
+        width: 320px !important;
         height: auto !important;
         margin: 0  !important;
     }
