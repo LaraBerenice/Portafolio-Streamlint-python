@@ -153,25 +153,25 @@ div.tarjeta {
         width: 100%;
     }
 
-    /* Botones en columna */ 
+    /* Botones en columna */
     .css-1lcbmhc.e1fqkh3o3 {
         flex-direction: column !important;
-         align-items: flex-start !important;
+        align-items: center !important;
     }
 
     .stButton > button {
-        font-size: 17px !important;
+        font-size: 18px !important;
         padding: 10px 14px !important;
         min-width: 60px !important;
-        margin: 4px 0 !important;
+        margin: 5px !important;
         border-radius: 8px !important;
         width: auto !important;
     }
 
     #modo-switch {
         text-align: right !important;
-        margin: 5px 0 !important;
-    }
+        margin-top: 10px;
+        margin-bottom: 10px;
     
 }
 </style>
@@ -331,8 +331,7 @@ with st.container():
         col1, = st.columns(1)
         with col1:
             st.markdown(f"""            
-            <div class="tarjeta" style='padding: 10px; border-radius: 10px;'
-            style="list-style-type: disc; padding-left: 30px;">
+            <div class="tarjeta"style="padding: 10px; border-radius: 10px; list-style-type: disc; padding-left: 30px;">
             
     <li><strong>Estudios de Impacto Ambiental (EIA)</strong>
         <p>Elaboración de Estudios de Impacto Ambiental para proyectos
