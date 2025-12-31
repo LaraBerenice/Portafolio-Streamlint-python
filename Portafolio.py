@@ -97,7 +97,7 @@ div.tarjeta {
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
         gap: 8px;
-        margin-top: 5px
+        margin-top: -14px
         width: 100%;
     }
 
@@ -185,8 +185,10 @@ with top_col1:
         <div class="titulo-texto">
             <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
             <p>
-                ESG, cumplimiento normativo ambiental, gestión de riesgos ambientales,
-                regulatorios y optimización del desempeño ambiental en proyectos e industrias.
+                Con foco en ESG, HSE, Calidad y tambien seguridad Alimentaria (para
+                industrias Alimentarias), cumplimiento normativo ambiental, gestión
+                de riesgos ambientales, regulatorios y optimización del desempeño ambiental
+                en proyectos e industrias.
             </p>
         </div>
     </div>
@@ -305,11 +307,11 @@ with st.container():
         <p>Elaboración de Estudios de Impacto Ambiental para proyectos
         de agroindustria, minería, energía, construcción e industria,
         orientados a evaluar impactos, garantizar el cumplimiento normativo y
-        asegurar la viabilidad ambiental de los proyectos desde su etapa inicial.</p>
+        asegurar la viabilidad ambiental de los proyectos.</p>
     </li>
 
-    <li><strong>Planes de Gestión Ambiental (PGA)</strong>
-        <p>iseño de Planes de Gestión Ambiental integrales,
+    <li><strong>Planes Integrales de Gestión Ambiental (PGA)</strong>
+        <p>Diseño de Planes de Gestión Ambiental integrales,
         incorporando criterios de desarrollo sostenible, mejora continua
         y desempeño ambiental, junto con aspectos de seguridad alimentaria,
         salud y seguridad laboral, responsabilidad social empresaria, calidad e inocuidad.</p>
@@ -318,8 +320,10 @@ with st.container():
     <li><strong>Auditorías Ambientales y Cumplimiento Normativo</strong>
         <p>Ejecución de auditorías ambientales y legales para identificar desvíos,
         riesgos y oportunidades de mejora, fortaleciendo los sistemas de gestión
-        y asegurando alineación con normativas vigentes, Buenas Prácticas Agrícolas (BPA)
-        y estándares ambientales aplicables.</p>
+        y asegurando alineación con normativas vigentes, Buenas Prácticas Agrícolas (BPA),
+        incorporando criterios de desarrollo sostenible, mejora continua, aspectos de seguridad
+        alimentaria, salud y seguridad laboral, responsabilidad social empresaria,
+        calidad e inocuidad y estándares ambientales aplicables.</p>
     </li>
 
     <li><strong>Evaluación Socioambiental, Económica y Financiera de Proyectos</strong>
@@ -343,8 +347,8 @@ with st.container():
     
       <li><strong>Informes Técnicos y Periciales</strong>
         <p>Elaboración de informes técnicos y periciales vinculados a la gestión ambiental,
-        administrativa, productiva y de infraestructura, con respaldo técnico, analítico y
-        normativo.</p>
+        la valoración económica ambiental en proyectos aldo y industrias con resptécnico,
+        analítico y normativ</p>
     </li>
 
     <li><strong>Monitoreo Ambiental y Toma de Muestras</strong>
