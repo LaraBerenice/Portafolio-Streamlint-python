@@ -102,6 +102,7 @@ div.tarjeta {
         gap: 6px;
         margin-top: -10px;
         width: 100%;
+        position: relative;  /* 🔑 para que #modo-switch se posicione respecto a este contenedor */
     }
     
      /* Fila logo + título */
@@ -171,6 +172,10 @@ div.tarjeta {
     #modo-switch {
         text-align: right !important;
         margin: 5px 0 !important;
+        position: absolute !important;   /* 🔑 lo saca del flujo normal */
+        top: 10px !important;           /* distancia desde arriba */
+        right: 16px !important;         /* distancia desde la derecha */
+        z-index: 1000;                  /* para que esté encima de otros elementos */
     }
     
 }
