@@ -97,6 +97,7 @@ div.tarjeta {
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
         gap: 8px;
+        margin-top: 5px
         width: 100%;
     }
 
@@ -137,7 +138,7 @@ div.tarjeta {
 
     #modo-switch {
         text-align: right !important;
-        margin-top: -14px;
+        margin-top: 5 px;
         margin-bottom: 0px;
     }
     
