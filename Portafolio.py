@@ -96,15 +96,15 @@ div.tarjeta {
         margin: 0 !important;
         padding-left: 16px !important;  /* ← UN SOLO margen */
         text-align: left;
-        gap: 8px;
-        margin-top: -14px
+        gap: 10px;
+        margin-top: -10px
         width: 100%;
     }
 
     .logo {
-        width: 120px !important;
+        width: 110px !important;
         height: auto !important;
-        margin: 0 0 10px 32px !important; /* top, right, bottom, left */
+        margin: 0  !important;
     }
     
     .titulo-texto {
@@ -118,28 +118,28 @@ div.tarjeta {
         font-size: 22px !important;
         text-align: left !important;   /* ← clave */
         margin: 0 0 6px 0 !important;
+        font-weight: bold;
         
     }
 
     /* Botones en columna */ 
     .css-1lcbmhc.e1fqkh3o3 {
         flex-direction: column !important;
-        align-items: center !important;
+         align-items: flex-start !important;
     }
 
     .stButton > button {
-        font-size: 18px !important;
+        font-size: 17px !important;
         padding: 10px 14px !important;
         min-width: 60px !important;
-        margin: 5px !important;
+        margin: 4px 0 !important;
         border-radius: 8px !important;
         width: auto !important;
     }
 
     #modo-switch {
         text-align: right !important;
-        margin-top: 5 px;
-        margin-bottom: 5px;
+        margin: 5 px 0 !important;;
     }
     
 }
