@@ -21,7 +21,7 @@ st.markdown("""
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
