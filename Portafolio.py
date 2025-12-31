@@ -77,7 +77,6 @@ div.tarjeta {
 
 .titulo-texto {
     max-width: 950px;
-    text-align: right;  /* ← derecha */ 
 }
 
 .titulo-texto h3 {
@@ -210,7 +209,7 @@ with top_col1:
     <div class="header-container">
         <img src="{logo}" class="logo">
         <div class="titulo-texto">
-            <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>   
+            <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
         </div>
     </div>
     <div class="texto-descripcion">
@@ -220,9 +219,9 @@ with top_col1:
                 en proyectos e industrias.
             </p>
         </div>
-    </div> 
     
-    """.format(logo), unsafe_allow_html=True)
+     </div>
+    """, unsafe_allow_html=True)
  
     with top_col2:
     # Encapsular los botones en un div con ID para CSS específico
