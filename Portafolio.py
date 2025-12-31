@@ -88,6 +88,12 @@ div.tarjeta {
     font-weight: bold;
 }
 
+.modo-botones {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 
 /* Responsive para móvil */
 @media (max-width: 768px) {
@@ -167,11 +173,12 @@ div.tarjeta {
         border-radius: 8px !important;
         width: auto !important;
     }
-
-    #modo-switch {
-        text-align: right !important;
-        margin-top: 10px;
-        margin-bottom: 10px;
+    
+    .modo-botones {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    }
     
 }
 </style>
@@ -226,18 +233,17 @@ with top_col1:
     
      </div>
     """, unsafe_allow_html=True)
- 
-    with top_col2:
-    # Encapsular los botones en un div con ID para CSS específico
-        st.markdown('<div id="modo-switch">', unsafe_allow_html=True)
-        col_sol, col_luna = st.columns(2)
-        with col_sol:
-            if st.button("☀️"):
-                st.session_state.mode = "Modo Día"
-        with col_luna:
-            if st.button("🌙"):
-                st.session_state.mode = "Modo Noche"
-        st.markdown('</div>', unsafe_allow_html=True)
+        
+    st.markdown('<div class="modo-botones">', unsafe_allow_html=True)
+    col_sol, col_luna = st.columns(2)
+    with col_sol:
+        if st.button("☀️"):
+            st.session_state.mode = "Modo Día"
+    with col_luna:
+        if st.button("🌙"):
+            st.session_state.mode = "Modo Noche"
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 # 🎨 Estilos por modo
 if st.session_state.mode == "Modo Noche":
@@ -331,7 +337,7 @@ with st.container():
         col1, = st.columns(1)
         with col1:
             st.markdown(f"""            
-            <div class="tarjeta"style="padding: 10px; border-radius: 10px; list-style-type: disc; padding-left: 30px;">
+            <div class="tarjeta"style="padding: 10px; border-radius: 10px; list-style-type: disc">
             
     <li><strong>Estudios de Impacto Ambiental (EIA)</strong>
         <p>Elaboración de Estudios de Impacto Ambiental para proyectos
