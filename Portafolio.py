@@ -21,7 +21,7 @@ st.markdown("""
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 0;
 }
 
@@ -137,7 +137,7 @@ div.tarjeta {
 
     #modo-switch {
         text-align: right !important;
-        margin-top: 0px;
+        margin-top: -14px;
         margin-bottom: 0px;
     }
     
