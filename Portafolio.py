@@ -89,7 +89,7 @@ div.stButton > button[aria-label="night"] {
     height: 150px;
     object-fit: contain;
     border-radius: 15px;
-    margin-top: -173px;
+    margin-top: -170px;
 }
 
 .titulo-texto h3 {
@@ -139,6 +139,7 @@ div.stButton > button[aria-label="night"] {
 
     .logo {
         width: 100px;
+        margin-top: -170px;
     }
 
     .titulo-texto h3 {
