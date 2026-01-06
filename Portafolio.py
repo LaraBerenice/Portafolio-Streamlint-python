@@ -1,3 +1,4 @@
+
 #frond-end - Lara Berenice Ledesma
 
 import streamlit as st
@@ -9,240 +10,166 @@ from datetime import datetime
 import os
 import re
 
-# Configuración de la página
-st.set_page_config(page_title="Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible", layout="wide")
 
-# Estilos personalizados
+
+# =========================
+# CONFIGURACIÓN
+# =========================
+st.set_page_config(
+    page_title="Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible",
+    layout="wide"
+)
+
+# =========================
+# ESTADO DEL MODO
+# =========================
+if "mode" not in st.session_state:
+    st.session_state.mode = "Modo Día"
+
+# =========================
+# FUNCIÓN IMÁGENES
+# =========================
+def imagen_base64(ruta):
+    with open(ruta, "rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode()
+
+# =========================
+# CSS GLOBAL + POSICIONAMIENTO REAL
+# =========================
 st.markdown("""
 <style>
-/* Estilo general para escritorio */
-.titulo-contenedor {
-    display: flex;
-    flex-direction: column;      /* 🔑 texto abajo */
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin-top:-10px;
-    margin-bottom: 0;
-    gap: -5px;
+
+/* ===== BOTONES DERECHA FIJA ===== */
+div.stButton {
+    width: auto !important; /* Ajusta el ancho del contenedor */
+    display: flex !important;
+    justify-content: flex-end !important; /* Alinea a la derecha */
 }
 
-div.tarjeta {
-    background-color:rgba(204, 232, 198, 0.6);
-    padding: 25px;
-    margin-top: -5px;
-    border-radius: 18px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+div.stButton > button[aria-label="day"],
+div.stButton > button[aria-label="night"] {
+    position: fixed !important;
+    top: 20px !important;
+    z-index: 10001 !important;
+    padding: 6px 12px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: 6px !important;
 }
 
-.img-servicio {
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-    border-radius: 12px;
-    margin-bottom: 8px;
+div.stButton > button[aria-label="day"] {
+    right: 70px !important;
 }
 
-.img-servicio img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+div.stButton > button[aria-label="night"] {
+    right: 20px !important;
 }
 
-
-.tarjeta {
-    height: 100%;
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-
+/* Texto modo */
+.modo-texto {
+    position: fixed !important;
+    top: 60px !important;
+    right: 20px !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    z-index: 10001 !important;
 }
 
+/* ===== HEADER ===== */
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* ← izquierda */
-    gap: 15px; /* mejor que margin-right */
-    width: 100%;
-    margin-left: 0;
+    gap: 15px;
 }
 
 .logo {
     width: 150px;
-    height: 170px;
+    height: 150px;
     object-fit: contain;
-    border-radius: 20px;
-    margin-right: 0px; /* separación normal */
-}
-
-.titulo-texto {
-    max-width: 950px;
 }
 
 .titulo-texto h3 {
     font-size: 40px;
-    text-align: left;   /* ← izquierda */
     margin: 0;
-    font-weight: bold;
 }
 
-.modo-botones {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background-color: rgba(204, 232, 198, 0.6);
+    padding: 25px;
+    border-radius: 18px;
 }
 
-
-/* Responsive para móvil */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-    .titulo-contenedor {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: stretch !important; /* 🔑 NO center */
-        margin: 0 !important;
-        padding-left: 16px !important;  /* ← UN SOLO margen */
-        text-align: left;
-        gap: 6px;
-        margin-top: -10px;
-        width: 100%;
-    }
-    
-     /* Fila logo + título */
-    .header-container {
-        flex-wrap: nowrap !important;   /* 🔑 nunca columna */
-        display: flex !important;
-        flex-direction: row !important;   /* 🔑 lado a lado */
-        align-items: center !important;
-        gap: 12px !important;
-        width: 100%;
+    div.stButton > button[aria-label="day"] {
+        top: 10px !important;
+        right: 60px !important;
+        font-size: 14px !important;
     }
 
+    div.stButton > button[aria-label="night"] {
+        top: 10px !important;
+        right: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .modo-texto {
+        top: 45px !important;
+        right: 10px !important;
+        font-size: 14px !important;
+    }
 
     .logo {
-        width: 110px !important;
-        height: auto !important;
-        margin: 0  !important;
-        flex-shrink: 0 !important; /* 🔑 no se achica ni salta */
-    }
-    
-    .titulo-texto {
-        margin: 0 !important;
-        padding: 0 !important;
-        text-align: left !important;
-        width: 100%;
-        flex: 1 1 auto !important;
-        min-width: 0 !important; /* 🔑 MUY importante en mobile */
+        width: 100px;
     }
 
     .titulo-texto h3 {
-        font-size: 22px !important;
-        text-align: left !important;   /* ← clave */
-        margin: 0 !important;
-        font-weight: bold;
-        
+        font-size: 22px;
     }
-    
-    /* Texto debajo del logo + título */
-    .texto-descripcion {
-        width: 100%;
-        margin-top: 4px !important;
-        text-align: left !important;
-    }
-    
-    .texto-descripcion {
-        font-size: 15px;
-        margin-top: 4px;
-        text-align: left;
-        width: 100%;
-    }
-
-    /* Botones en columna */
-    .css-1lcbmhc.e1fqkh3o3 {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .stButton > button {
-        font-size: 18px !important;
-        padding: 10px 14px !important;
-        min-width: 60px !important;
-        margin: 5px !important;
-        border-radius: 8px !important;
-        width: auto !important;
-    }
-    
-    .modo-botones {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    }
-    
 }
+
 </style>
 """, unsafe_allow_html=True)
 
-
-# Script para detectar móvil
-st.markdown("""
-    <script>
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    if (mediaQuery.matches) {
-        window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mobile', value: true }, '*');
-    } else {
-        window.parent.postMessage({ type: 'streamlit:setComponentValue', key: 'mobile', value: false }, '*');
-    }
-    </script>
-""", unsafe_allow_html=True)
-
-if 'mobile' not in st.session_state:
-    st.session_state.mobile = False  # fallback
-
-# Función para imagen en base64
-def imagen_base64(ruta):
-    with open(ruta, "rb") as img_file:
-        b64 = base64.b64encode(img_file.read()).decode()
-    return f"data:image/png;base64,{b64}"
-
-# Inicialización del modo
-if 'mode' not in st.session_state:
+# =========================
+# BOTONES (SIN CONTENEDORES HTML)
+# =========================
+if st.button("☀️", key="day"):
     st.session_state.mode = "Modo Día"
 
-# Línea superior con logo + descripción + botones
-top_col1, top_col2 = st.columns([6, 1])
+if st.button("🌙", key="night"):
+    st.session_state.mode = "Modo Noche"
 
-with top_col1:
-    logo = imagen_base64("Imagenes/b_blanco.png")
-    
-    
-    st.markdown(f"""
-    <div class="titulo-contenedor">
-    <div class="header-container">
-        <img src="{logo}" class="logo">
-        <div class="titulo-texto">
-            <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
-        </div>
+# =========================
+# LÓGICA DE CAMBIO DE MODO
+# =========================
+query_params = st.query_params  # <-- reemplazo actualizado
+if "mode" in query_params:
+    if query_params["mode"][0] == "day":
+        st.session_state.mode = "Modo Día"
+    elif query_params["mode"][0] == "night":
+        st.session_state.mode = "Modo Noche"
+
+
+# Logo
+logo = imagen_base64("Imagenes/b_blanco.png")
+
+# Encabezado
+st.markdown(f"""
+<div class="header-container">
+    <img src="{logo}" class="logo">
+    <div class="titulo-texto">
+        <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
     </div>
-    <div class="texto-descripcion">
-                Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
-                ambientales, regulatorios y optimización del desempeño ambiental
-                en proyectos e industrias.
-        </div>
-    
-     </div>
-    """, unsafe_allow_html=True)
-        
-    st.markdown('<div class="modo-botones">', unsafe_allow_html=True)
-    col_sol, col_luna = st.columns(2)
-    with col_sol:
-        if st.button("☀️"):
-            st.session_state.mode = "Modo Día"
-    with col_luna:
-        if st.button("🌙"):
-            st.session_state.mode = "Modo Noche"
-    st.markdown('</div>', unsafe_allow_html=True)
+</div>
+
+<div class="texto-descripcion">
+    Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
+    ambientales, regulatorios y optimización del desempeño ambiental
+    en proyectos e industrias.
+</div>
+""", unsafe_allow_html=True)
 
 
 # 🎨 Estilos por modo
