@@ -181,7 +181,7 @@ st.markdown(f"""
         <h3>Servicios de Consultoría en Gestión Ambiental</h3>
     </div>
     <div class="texto-descripcion">
-            Desarrollo Sostenible · Cumplimiento Normativo · Evaluación de Impacto Ambiental 
+    Desarrollo Sostenible · Cumplimiento Normativo Ambiental · Gestión y Prevención de Riesgos Ambientales · EIA · PGA · SGA · ESG · Mejora Continua
     </div>
 </div>
 """, unsafe_allow_html=True)
