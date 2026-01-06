@@ -88,7 +88,7 @@ div.stButton > button[aria-label="night"] {
     width: 150px;
     height: 150px;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-top: -170px;
 }
 
