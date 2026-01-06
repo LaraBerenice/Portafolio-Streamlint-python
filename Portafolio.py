@@ -42,6 +42,7 @@ div.stButton {
     width: auto !important; /* Ajusta el ancho del contenedor */
     display: flex !important;
     justify-content: flex-end !important; /* Alinea a la derecha */
+    margin-top: 1px;
 }
 
 div.stButton > button[aria-label="day"],
@@ -77,18 +78,31 @@ div.stButton > button[aria-label="night"] {
 .header-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo {
     width: 150px;
     height: 150px;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 .titulo-texto h3 {
     font-size: 40px;
     margin: 0;
+}
+
+/* ===== SUBTÍTULO / DESCRIPCIÓN ===== */
+.texto-descripcion {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 /* ===== TARJETAS ===== */
@@ -163,10 +177,11 @@ st.markdown(f"""
 </div>
 
 <div class="texto-descripcion">
-    Con foco en ESG, HSE, cumplimiento normativo ambiental, gestión de riesgos
+    Con foco en ESG, QHSE, cumplimiento normativo ambiental, gestión de riesgos
     ambientales, regulatorios y optimización del desempeño ambiental
     en proyectos e industrias.
 </div>
+
 """, unsafe_allow_html=True)
 
 
