@@ -89,7 +89,7 @@ div.stButton > button[aria-label="night"] {
     height: 150px;
     object-fit: contain;
     border-radius: 15px;
-    margin-top: -172px;
+    margin-top: -173px;
 }
 
 .titulo-texto h3 {
