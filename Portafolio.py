@@ -37,11 +37,11 @@ def imagen_base64(ruta):
 st.markdown("""
 <style>
 
-/* ===== BOTONES DERECHA FIJA ===== */
+* ===== BOTONES IZQUIERDA FIJA ===== */
 div.stButton {
-    width: auto !important; /* Ajusta el ancho del contenedor */
+    width: auto !important;
     display: flex !important;
-    justify-content: flex-end !important; /* Alinea a la derecha */
+    justify-content: flex-start !important;
     margin-top: 1px;
 }
 
@@ -57,28 +57,31 @@ div.stButton > button[aria-label="night"] {
 }
 
 div.stButton > button[aria-label="day"] {
-    right: 70px !important;
+    left: 20px !important;
 }
 
 div.stButton > button[aria-label="night"] {
-    right: 20px !important;
+    left: 70px !important;
 }
 
 /* Texto modo */
 .modo-texto {
     position: fixed !important;
     top: 60px !important;
-    right: 20px !important;
+    left: 20px !important;
     font-weight: bold !important;
     font-size: 16px !important;
     z-index: 10001 !important;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER VERTICAL ===== */
 .header-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 10px;
+    margin-top: 40px;
 }
 
 .logo {
@@ -86,6 +89,7 @@ div.stButton > button[aria-label="night"] {
     height: 150px;
     object-fit: contain;
     border-radius: 10px;
+    margin-top: -170px;
 }
 
 .titulo-texto h3 {
@@ -93,16 +97,17 @@ div.stButton > button[aria-label="night"] {
     margin: 0;
 }
 
-/* ===== SUBTÍTULO / DESCRIPCIÓN ===== */
+/* ===== SUBTÍTULO ===== */
 .texto-descripcion {
     background-color: #4CAF50;
     color: white;
-    padding: 8px 15px;
-    margin-top: 15px;
+    padding: 8px 20px;
+    margin-top: 10px;
     border-radius: 10px;
     font-size: 18px;
     line-height: 1.5;
     font-weight: 500;
+    max-width: 900px;
 }
 
 /* ===== TARJETAS ===== */
@@ -168,21 +173,19 @@ if "mode" in query_params:
 logo = imagen_base64("Imagenes/b_blanco.png")
 
 # Encabezado
+
 st.markdown(f"""
 <div class="header-container">
     <img src="{logo}" class="logo">
     <div class="titulo-texto">
-        <h3>Servicios de Consultoría en Gestión Ambiental y Desarrollo Sostenible</h3>
+        <h3>Servicios de Consultoría en Gestión Ambiental</h3>
+    </div>
+    <div class="texto-descripcion">
+            Desarrollo Sostenible · Cumplimiento Normativo · Evaluación de Impacto Ambiental 
     </div>
 </div>
-
-<div class="texto-descripcion">
-    Con foco en ESG, QHSE, cumplimiento normativo ambiental, gestión de riesgos
-    ambientales, regulatorios y optimización del desempeño ambiental
-    en proyectos e industrias.
-</div>
-
 """, unsafe_allow_html=True)
+
 
 
 # 🎨 Estilos por modo
